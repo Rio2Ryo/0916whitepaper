@@ -22,7 +22,7 @@ export default function Hero() {
       {/* Background (黒ベース) */}
       <div className="bg-wrap">
         <Image
-          src="/earth-regeneration-darkened.png" // ここを新しい画像パスに変更します
+          src="/hero-earth-regeneration-Dnk2z_VF.png" // ここを新しい画像パスに変更します
           alt="Earth Regeneration"
           fill
           style={{ objectFit: 'cover' }}
