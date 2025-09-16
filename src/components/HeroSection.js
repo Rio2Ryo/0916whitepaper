@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Hero() {
   const scrollToDetails = () => {
@@ -22,7 +23,7 @@ export default function Hero() {
       {/* ===== 固定ヘッダー（追加） ===== */}
       <header className="site-header">
         <div className="nav-inner">
-          <a href="/" className="brand">MOTHER<br />VEGETABLES</a>
+          <Link href="/" className="brand">MOTHER<br />VEGETABLES</Link>
           <nav className="nav">
             <a href="#project-overview">プロジェクト概要</a>
             <a href="#team">チーム</a>
