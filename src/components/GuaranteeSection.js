@@ -250,115 +250,99 @@ export default function GuaranteeSection() {
 
       {/* styles */}
       <style jsx>{`
-        :root {
-          --bg: #0b1216;
-          --card: #141c24;
-          --stroke: rgba(200,255,230,.12);
-          --text: #eaf7ee;
-          --muted: #cfe2ef;
-          --green: #00db6a;
-          --purple: #d892ff;
-          --yellow: #ffd166;
-          --blue: #6fb2ff;
-          --red: #ff6b6b;
-        }
-        .tech-section { background: var(--bg); color: var(--text); padding: 6rem 1rem; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .header { text-align: center; margin-bottom: 1.2rem; }
-        .label { display:inline-block; padding:6px 14px; border-radius:999px; background:rgba(255,255,255,.08); color:#9aa; font-size:13px; margin-bottom:12px; }
-        .title { font-size: clamp(28px, 4.2vw, 44px); font-weight: 800; margin: 0 0 6px; }
-        .subtitle { font-weight: 800; margin: 0; }
-        .subtitle.green { color: var(--green); }
+  :root {
+    /* ▶ スクショ準拠の濃紺＆淡い白緑 */
+    --bg:    #0b0f19;                 /* セクション背景（ほぼ黒の濃紺） */
+    --card:  #111823;                 /* カード背景（背景より少し明るい濃紺） */
+    --stroke: rgba(180, 240, 220, .14);
+    --text:  #e2f1ec;                 /* セクションの基本文字色（淡い白緑） */
+    --muted: #cfeee0;                 /* カード本文色（もう少し白寄り） */
+    --heading:#f5fbff;                /* 見出しのほぼ白 */
+    --green:  #00db6a;
+    --purple: #d892ff;
+    --yellow: #ffd166;
+    --blue:   #6fb2ff;
+    --red:    #ff6b6b;
+  }
 
-        .section-h { text-align:center; font-size:18px; font-weight:800; margin: 32px 0 14px; }
-        .section-h.purple { color: var(--purple); }
-        .section-h.green { color: var(--green); }
-        .section-h.yellow { color: var(--yellow); }
-        .section-h.red { color: var(--red); }
+  .tech-section { background: var(--bg); color: var(--text); padding: 6rem 1rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
 
-        .card {
-          background: rgba(20,28,36,.85);
-          border: 1px solid var(--stroke);
-          border-radius: 16px;
-          padding: 20px 18px;
-          line-height: 1.9;
-          color: var(--muted);
-          margin: 0 auto 22px;
-        }
-        .card p { margin: 0 0 10px; }
+  .header { text-align: center; margin-bottom: 1.2rem; }
+  .label { display:inline-block; padding:6px 14px; border-radius:999px; background:rgba(255,255,255,.08); color:#9fb0c2; font-size:13px; margin-bottom:12px; }
 
-        .callout {
-          margin-top: 14px;
-          padding: 12px 14px;
-          border-radius: 12px;
-          background: rgba(120,90,255,.22);
-          color: #dfe0ff;
-        }
+  .title { color: var(--heading); font-size: clamp(28px, 4.2vw, 44px); font-weight: 800; margin: 0 0 6px; }
+  .subtitle { font-weight: 800; margin: 0; }
+  .subtitle.green { color: var(--green); }
 
-        /* プラットフォーム */
-        .platform { margin-top: 12px; }
-        .platform-head {
-          text-align:center; font-weight: 900; color: var(--green);
-          margin-bottom: 12px; letter-spacing: .8px;
-        }
-        .platform-inner {
-          border: 1px solid var(--stroke);
-          border-radius: 14px;
-          padding: 16px;
-          background: rgba(10,16,22,.6);
-        }
-        .platform-grid {
-          display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-        }
-        .pla-box {
-          border-radius: 12px; padding: 18px; text-align: center; color: #dfefff;
-        }
-        .pla-box h4 { margin: 8px 0 6px; font-size: 16px; }
-        .pla-box.blue { background: rgba(80,140,220,.15); }
-        .pla-box.green { background: rgba(0,200,120,.15); }
-        .footnote { text-align:center; margin: 10px 0 0; font-size: 12px; opacity: .9; }
+  .section-h { text-align:center; font-size:18px; font-weight:800; margin: 32px 0 14px; color: var(--heading); }
+  .section-h.purple { color: var(--purple); }
+  .section-h.green  { color: var(--green);  }
+  .section-h.yellow { color: var(--yellow); }
+  .section-h.red    { color: var(--red);    }
 
-        /* 市場における地位 */
-        .chip-h { color: #e8f3ff; font-weight: 800; margin: 0 0 8px; }
-        .chip-h.green { color: var(--green); }
-        .chips { display:grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
-        .dot-list { list-style: none; padding:0; margin:0; }
-        .dot-list li { position:relative; padding-left:18px; margin: 6px 0; }
-        .dot-list li:before {
-          content:""; position:absolute; left:0; top:.55em; width:8px; height:8px;
-          border-radius:50%; background: #b79dff;
-        }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--stroke);
+    border-radius: 16px;
+    padding: 20px 18px;
+    line-height: 1.9;
+    color: var(--muted);              /* カード本文は淡い白緑で統一 */
+    margin: 0 auto 22px;
+  }
+  .card p { margin: 0 0 10px; }
 
-        /* 2カラム汎用 */
-        .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .callout {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(120,90,255,.22);
+    color: #e6e7ff;                   /* 紫コールアウトの文字色 */
+  }
 
-        .accent { font-weight: 900; margin: 0 0 8px; }
-        .accent.yellow { color: var(--yellow); }
-        .accent.blue { color: var(--blue); }
-        .accent.green { color: var(--green); }
+  /* プラットフォーム */
+  .platform { margin-top: 12px; }
+  .platform-head { text-align:center; font-weight: 900; color: var(--green); margin-bottom: 12px; letter-spacing: .8px; }
+  .platform-inner { border: 1px solid var(--stroke); border-radius: 14px; padding: 16px; background: rgba(8,14,22,.6); }
+  .platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .pla-box { border-radius: 12px; padding: 18px; text-align: center; color: var(--heading); }
+  .pla-box h4 { margin: 8px 0 6px; font-size: 16px; color: var(--heading); }
+  .pla-box.blue  { background: rgba(80,140,220,.15); }
+  .pla-box.green { background: rgba(0,200,120,.15); }
+  .footnote { text-align:center; margin: 10px 0 0; font-size: 12px; color: #bdd2e1; }
 
-        /* 課題split */
-        .split h4 { margin: 0 0 10px; color: #fff; }
-        .split-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-        .tag { font-weight: 800; margin: 0 0 6px; }
-        .tag.ok { color: var(--green); }
-        .tri-list, .check-list { list-style: none; padding:0; margin:0; }
-        .tri-list li, .check-list li { position: relative; padding-left: 20px; margin: 8px 0; }
-        .tri-list li:before { content: "▶"; position:absolute; left:0; top:0; color: var(--red); font-size: 12px; }
-        .tri-list.blue li:before { color: var(--blue); }
-        .check-list li:before { content:"✓"; position:absolute; left:0; top:0; color: var(--green); font-weight:900; }
+  /* 市場における地位 */
+  .chip-h { color: var(--heading); font-weight: 800; margin: 0 0 8px; }
+  .chip-h.green { color: var(--green); }
+  .chips { display:grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .dot-list { list-style: none; padding:0; margin:0; }
+  .dot-list li { position:relative; padding-left:18px; margin: 6px 0; color: var(--muted); }
+  .dot-list li:before { content:""; position:absolute; left:0; top:.55em; width:8px; height:8px; border-radius:50%; background: #b79dff; }
 
-        /* レスポンシブ */
-        @media (max-width: 1024px) {
-          .two-col { grid-template-columns: 1fr; }
-          .chips { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-          .platform-grid { grid-template-columns: 1fr; }
-          .split-grid { grid-template-columns: 1fr; }
-          .title { line-height: 1.15; }
-        }
-      `}</style>
+  /* 2カラム汎用 */
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+  .accent { font-weight: 900; margin: 0 0 8px; }
+  .accent.yellow { color: var(--yellow); }
+  .accent.blue   { color: var(--blue); }
+  .accent.green  { color: var(--green); }
+
+  /* 課題split */
+  .split h4 { margin: 0 0 10px; color: var(--heading); }
+  .split-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .tag { font-weight: 800; margin: 0 0 6px; color: var(--heading); }
+  .tag.ok { color: var(--green); }
+  .tri-list, .check-list { list-style: none; padding:0; margin:0; }
+  .tri-list li, .check-list li { position: relative; padding-left: 20px; margin: 8px 0; color: var(--muted); }
+  .tri-list li:before { content: "▶"; position:absolute; left:0; top:0; color: var(--red); font-size: 12px; }
+  .tri-list.blue li:before { color: var(--blue); }
+  .check-list li:before { content:"✓"; position:absolute; left:0; top:0; color: var(--green); font-weight:900; }
+
+  /* レスポンシブ */
+  @media (max-width: 1024px) { .two-col { grid-template-columns: 1fr; } .chips { grid-template-columns: 1fr; } }
+  @media (max-width: 768px)  { .platform-grid { grid-template-columns: 1fr; } .split-grid { grid-template-columns: 1fr; } .title { line-height: 1.15; } }
+`}</style>
+
     </section>
   );
 }
