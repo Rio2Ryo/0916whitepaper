@@ -228,7 +228,6 @@ export default function Home() {
          <Effects />
          <TestimonialSection />
          <FeatureSection />
-         <ProductSection />
          <GuaranteeSection />
          <FAQSection />
          <Footer />
