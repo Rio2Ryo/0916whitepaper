@@ -22,13 +22,13 @@ export default function Hero() {
       {/* Background (黒ベース) */}
       <div className="bg-wrap">
         <Image
-          src="/hero-earth-regeneration-Dnk2z_VF.png" // ここを新しい画像パスに変更します
+          src="/Gemini_Generated_Image_cu7xrscu7xrscu7x.png" // ここをさらに暗くした画像パスに変更します
           alt="Earth Regeneration"
           fill
           style={{ objectFit: 'cover' }}
           priority
         />
-        {/* 黒を強く出すためのオーバーレイ - より暗くするために不透明度を上げました */}
+        {/* 黒を強く出すためのオーバーレイ - さらに暗くするために不透明度を上げました */}
         <div className="bg-overlay" />
         <div className="bg-vignette" />
       </div>
@@ -142,7 +142,7 @@ export default function Hero() {
           --glass-bg: rgba(6, 18, 12, 0.68);
 
           /* 黒を強く出すためのオーバーレイ */
-          --overlay: rgba(0, 0, 0, 0.9); /* 元の0.82から0.9に上げて、より暗くしました */
+          --overlay: rgba(0, 0, 0, 0.95); /* さらに暗くするために0.95に上げました */
         }
 
         .hero {
@@ -178,9 +178,9 @@ export default function Hero() {
         /* Title */
         .title { margin: 0 0 20px 0; line-height: 1.08; letter-spacing: 0.02em; }
         .title-accent {
-          color: var(--green);
-          text-shadow: 0 0 18px rgba(36, 229, 112, 0.38);
-          font-weight: 800;
+          color: #05df72;
+          
+          font-weight: 600;
           font-size: clamp(52px, 7.2vw, 104px); /* 画像のサイズ感に寄せる */
         }
         .title .thin { font-weight: 760; }
