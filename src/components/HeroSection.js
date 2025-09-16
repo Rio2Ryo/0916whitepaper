@@ -150,6 +150,9 @@ export default function Hero() {
           --glass-bg: rgba(6, 18, 12, 0.68);
           --overlay: rgba(0, 0, 0, 0.95);
         }
+        p{
+        color:white;
+        }
 
         /* ====== ヘッダー（追加） ====== */
         .site-header{
@@ -208,8 +211,9 @@ export default function Hero() {
         .title { margin: 0 0 20px 0; line-height: 1.08; letter-spacing: 0.02em; }
         .title-accent {
           color: #05df72;
-          font-weight: 600;
-          font-size: clamp(52px, 7.2vw, 104px);
+          font-weight: 400;
+          font-size: 70px!important;
+          margin-top:60px;
         }
         .title .thin { font-weight: 760; }
 
