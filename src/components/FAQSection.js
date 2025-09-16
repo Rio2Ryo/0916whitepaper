@@ -4,7 +4,6 @@ export default function TokenSection() {
   return (
     <section className="token">
       <div className="container">
-
         {/* 小見出しチップ */}
         <div className="label">5. トークン情報</div>
 
@@ -17,7 +16,8 @@ export default function TokenSection() {
         {/* 基本構造パネル */}
         <div className="panel panel-lg">
           <p className="panel-lead">
-            MOTHER VEGETABLES Token（MVT）は藻類培養生産施設と直接接続されたユーティリティトークンとして機能し、以下の核心的ユーティリティを提供します：
+            MOTHER VEGETABLES
+            Token（MVT）は藻類培養生産施設と直接接続されたユーティリティトークンとして機能し、以下の核心的ユーティリティを提供します：
           </p>
 
           <div className="triple">
@@ -48,7 +48,7 @@ export default function TokenSection() {
         <div className="grid two">
           <div className="card">
             <div className="card-ttl">
-              <span className="coin">＄</span>
+              <span className="coin">$</span>
               基本情報
             </div>
             <div className="info">
@@ -82,9 +82,21 @@ export default function TokenSection() {
           <div className="card card-green">
             <div className="card-ttl">投資家ベネフィット</div>
             <ul className="benefits">
-              <li><span className="dot dot-g" />透明性 <em>— NFT取得を証したブロックチェーン検証CO₂削減証明書。</em></li>
-              <li><span className="dot dot-g" />収益機会 <em>— 環境インパクトNFTの二次市場取引機会。</em></li>
-              <li><span className="dot dot-g" />成長ポテンシャル <em>— 生産施設拡張およびNFT発行能力増加に連動した価値上昇。</em></li>
+              <li>
+                <span className="dot" />
+                <strong>透明性</strong>
+                <p>NFT取得を通じたブロックチェーン検証CO₂削減証明書。</p>
+              </li>
+              <li>
+                <span className="dot" />
+                <strong>収益機会</strong>
+                <p>環境インパクトNFTの二次市場取引機会。</p>
+              </li>
+              <li>
+                <span className="dot" />
+                <strong>成長ポテンシャル</strong>
+                <p>生産施設拡張およびNFT発行能力増加に連動した価値上昇。</p>
+              </li>
             </ul>
           </div>
         </div>
@@ -96,28 +108,32 @@ export default function TokenSection() {
 
             <div className="bar-row">
               <div className="bar-k">IEO販売</div>
-              <div className="bar"><span style={{width:'10%'}} /></div>
+              <div className="bar">
+                <span style={{ width: "10%" }} />
+              </div>
               <div className="bar-v">10%</div>
             </div>
-
             <div className="bar-row">
               <div className="bar-k">チーム配分</div>
-              <div className="bar"><span style={{width:'5%'}} /></div>
+              <div className="bar">
+                <span style={{ width: "5%" }} />
+              </div>
               <div className="bar-v">5%</div>
             </div>
-
             <div className="bar-row">
               <div className="bar-k">アドバイザリープール</div>
-              <div className="bar"><span style={{width:'5%'}} /></div>
+              <div className="bar">
+                <span style={{ width: "5%" }} />
+              </div>
               <div className="bar-v">5%</div>
             </div>
-
             <div className="bar-row">
               <div className="bar-k">リザーブファンド</div>
-              <div className="bar"><span style={{width:'80%'}} /></div>
+              <div className="bar">
+                <span style={{ width: "80%" }} />
+              </div>
               <div className="bar-v">80%</div>
             </div>
-
             <p className="note">
               一般投資家向け配布／開発・運営チームインセンティブ／戦略的パートナーおよび専門家報酬／将来の事業拡張および戦略的開発
             </p>
@@ -125,25 +141,27 @@ export default function TokenSection() {
 
           <div className="card">
             <div className="card-ttl">資本配置</div>
-
             <div className="bar-row">
               <div className="bar-k">生産施設建設</div>
-              <div className="bar"><span style={{width:'60%'}} /></div>
-              <div className="bar-v accent">60%</div>
+              <div className="bar">
+                <span className="bar-fill-blue" style={{ width: "60%" }} />
+              </div>
+              <div className="bar-v accent-blue">60%</div>
             </div>
-
             <div className="bar-row">
               <div className="bar-k">システム開発</div>
-              <div className="bar"><span style={{width:'20%'}} /></div>
+              <div className="bar">
+                <span className="bar-fill-blue" style={{ width: "20%" }} />
+              </div>
               <div className="bar-v">20%</div>
             </div>
-
             <div className="bar-row">
               <div className="bar-k">マーケティング・事業開発</div>
-              <div className="bar"><span style={{width:'20%'}} /></div>
+              <div className="bar">
+                <span className="bar-fill-blue" style={{ width: "20%" }} />
+              </div>
               <div className="bar-v">20%</div>
             </div>
-
             <p className="note">
               新施設開発および既存施設拡張／プラットフォーム強化および技術進歩／グローバル展開および市場浸透
             </p>
@@ -163,22 +181,30 @@ export default function TokenSection() {
         <h3 className="sec-ttl purple">エコシステムの循環モデル</h3>
         <div className="flow card">
           <div className="step">
-            <div className="ico gold">①</div>
+            <div className="ico gold">
+              <svg fill="currentColor" viewBox="0 0 20 20"><path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.665l3-3Z" /><path d="M8.603 3.799a4.49 4.49 0 0 1 4.49 4.49v.18a4.5 4.5 0 0 1-8.603 1.95.75.75 0 0 0-1.196-.92C3.13 10.42 3.13 12.18 4 13a4 4 0 0 0 5.657 0l3-3a4 4 0 0 0-5.657-5.657l-1.061 1.06a2.5 2.5 0 0 1 3.535 3.535L6.464 12.232a.75.75 0 0 0-1.06 1.06l1.223-1.223a4 4 0 0 0 5.657-5.657l-3-3a4.002 4.002 0 0 0-4.243-.38Z" /></svg>
+            </div>
             <div className="step-ttl">1. IEO参加</div>
             <div className="step-txt">投資家がMVTトークンを購入</div>
           </div>
           <div className="step">
-            <div className="ico green">②</div>
+            <div className="ico green">
+              <svg fill="currentColor" viewBox="0 0 20 20"><path d="M10.75 16.8a.75.75 0 0 0 0-1.5h-1.5a.75.75 0 0 0 0 1.5h1.5Z" /><path fillRule="evenodd" d="M.75 6.162V15.25a3 3 0 0 0 3 3h12.5a3 3 0 0 0 3-3V6.162l-7.952-4.33a.75.75 0 0 0-.596 0L.75 6.162ZM2.25 15.25V7.22l7-3.812 7 3.812v8.03a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5Z" clipRule="evenodd" /></svg>
+            </div>
             <div className="step-ttl">2. 施設建設</div>
             <div className="step-txt">資金で生産施設を建設・拡張</div>
           </div>
           <div className="step">
-            <div className="ico blue">③</div>
+            <div className="ico blue">
+              <svg fill="currentColor" viewBox="0 0 20 20"><path d="M15.5 5.133a.75.75 0 0 1 .947.333l.254.582a.75.75 0 0 1-.948.947l-.253-.582a4.5 4.5 0 0 0-8.5 0l-.254.582a.75.75 0 1 1-.947-.947l.253-.582a6 6 0 0 1 10 0Z" /><path d="M15.5 8.133a.75.75 0 0 1 .947.333l.254.582a.75.75 0 0 1-.948.947l-.253-.582a4.5 4.5 0 0 0-8.5 0l-.254.582a.75.75 0 1 1-.947-.947l.253-.582a6 6 0 0 1 10 0Z" /><path d="M15.5 11.133a.75.75 0 0 1 .947.333l.254.582a.75.75 0 0 1-.948.947l-.253-.582a4.5 4.5 0 0 0-8.5 0l-.254.582a.75.75 0 1 1-.947-.947l.253-.582a6 6 0 0 1 10 0Z" /></svg>
+            </div>
             <div className="step-ttl">3. CO₂吸収</div>
             <div className="step-txt">施設が24時間365日CO₂を吸収</div>
           </div>
           <div className="step">
-            <div className="ico violet">④</div>
+            <div className="ico violet">
+              <svg fill="currentColor" viewBox="0 0 20 20"><path d="M11.22 8.242a.75.75 0 0 1 0 1.06l-2.243 2.243a.75.75 0 0 1-1.06-1.06l2.242-2.243a.75.75 0 0 1 1.06 0Z" /><path fillRule="evenodd" d="M5.964 1.342a.75.75 0 0 1 .854-.142l8 4.5a.75.75 0 0 1 0 1.39l-8 4.5a.75.75 0 0 1-.854-.143l-4.5-8a.75.75 0 0 1 .142-.853l4.5-8Z" clipRule="evenodd" /></svg>
+            </div>
             <div className="step-ttl">4. NFT報酬</div>
             <div className="step-txt">ステーキング参加者にNFTを配布</div>
           </div>
@@ -191,7 +217,9 @@ export default function TokenSection() {
             <span className="q-badge qb-g">Q1</span>
             <div className="q-body">
               <div className="q-ttl">2025年 第1四半期</div>
-              <div className="q-txt">IEO実施、トークン配布開始、初期ステーキングプール開設</div>
+              <div className="q-txt">
+                IEO実施、トークン配布開始、初期ステーキングプール開設
+              </div>
             </div>
           </div>
 
@@ -199,7 +227,9 @@ export default function TokenSection() {
             <span className="q-badge qb-b">Q2</span>
             <div className="q-body">
               <div className="q-ttl">2025年 第2四半期</div>
-              <div className="q-txt">第1期生産施設建設開始、パートナーシップ拡大</div>
+              <div className="q-txt">
+                第1期生産施設建設開始、パートナーシップ拡大
+              </div>
             </div>
           </div>
 
@@ -207,7 +237,9 @@ export default function TokenSection() {
             <span className="q-badge qb-v">Q3</span>
             <div className="q-body">
               <div className="q-ttl">2025年 第3四半期</div>
-              <div className="q-txt">初期施設稼働開始、CO₂吸収データ記録開始、NFT発行開始</div>
+              <div className="q-txt">
+                初期施設稼働開始、CO₂吸収データ記録開始、NFT発行開始
+              </div>
             </div>
           </div>
 
@@ -215,7 +247,9 @@ export default function TokenSection() {
             <span className="q-badge qb-y">Q4</span>
             <div className="q-body">
               <div className="q-ttl">2025年 第4四半期</div>
-              <div className="q-txt">NFTマーケットプレイス開設、第2期施設建設計画発表</div>
+              <div className="q-txt">
+                NFTマーケットプレイス開設、第2期施設建設計画発表
+              </div>
             </div>
           </div>
         </div>
@@ -223,118 +257,390 @@ export default function TokenSection() {
 
       {/* ===== Styles ===== */}
       <style jsx>{`
-        :root{
-          --black:#000;
-          --ink:#e6edf3;
-          --ink-dim:#b7c1c8;
-          --panel:#0e141b;
-          --border:rgba(255,255,255,.06);
-          --radius-lg:18px;
-          --radius-md:14px;
-          --yellow:#facc15;
-          --green:#22c55e;
-          --cyan:#22d3ee;
-          --violet:#a78bfa;
-          --blue:#60a5fa;
+        :root {
+          --black: #0c0a13;
+          --ink: #e6edf3;
+          --ink-dim: #9fb0c9;
+          --panel: #13111b;
+          --border: rgba(255, 255, 255, 0.08);
+          --radius-lg: 16px;
+          --radius-md: 12px;
+          --yellow: #f5c82e;
+          --green: #27c18d;
+          --cyan: #39d6e5;
+          --violet: #a98aff;
+          --blue: #4f96ee;
+          --red: #f36653;
         }
-        .token{background:var(--black); padding:80px 16px;}
-        .container{max-width:1200px;margin:0 auto;color:var(--ink);}
-        .label{
-          display:inline-block;margin:0 auto 10px; color:var(--yellow);
-          background:rgba(250,204,21,.12); border:1px solid rgba(250,204,21,.4);
-          border-radius:999px; padding:6px 12px; font-size:13px; letter-spacing:.08em;
+        .token {
+          background: var(--black);
+          padding: 80px 16px;
         }
-        .title{text-align:center; font-weight:800; font-size:42px; line-height:1.2; margin:8px 0 24px;}
-        @media (min-width:1200px){ .title{font-size:52px;} }
-        .subttl{color:var(--yellow); text-align:center; font-weight:700; letter-spacing:.06em; margin-bottom:18px;}
-
-        .panel{
-          background:var(--panel); border:1px solid var(--border);
-          border-radius:var(--radius-lg); padding:24px; box-shadow:0 10px 28px rgba(0,0,0,.35);
+        .container {
+          max-width: 900px;
+          margin: 0 auto;
+          color: var(--ink);
         }
-        .panel-lg{margin-bottom:28px;}
-        .panel-lead{color:var(--ink); opacity:.9; line-height:1.9; margin:0 0 16px;}
-        .panel-txt{color:var(--ink-dim); line-height:1.9; margin:0;}
-
-        .triple{display:grid; grid-template-columns:1fr; gap:14px;}
-        @media (min-width:900px){ .triple{grid-template-columns:repeat(3,1fr);} }
-        .mini-card{
-          background:rgba(255,255,255,.02); border:1px solid var(--border);
-          border-radius:var(--radius-md); padding:16px 18px;
+        .label {
+          display: block;
+          text-align: center;
+          margin: 0 auto 12px;
+          width: fit-content;
+          color: var(--yellow);
+          background: rgba(245, 200, 46, 0.1);
+          border: 1px solid rgba(245, 200, 46, 0.3);
+          border-radius: 999px;
+          padding: 6px 14px;
+          font-size: 13px;
+          font-weight: 500;
+          letter-spacing: 0.05em;
         }
-        .mini-badge.yellow{
-          display:inline-block; background:rgba(250,204,21,.12); border:1px solid rgba(250,204,21,.4);
-          color:var(--yellow); border-radius:10px; font-weight:700; font-size:14px; padding:6px 10px; margin-bottom:10px;
+        .title {
+          text-align: center;
+          font-weight: 800;
+          font-size: clamp(32px, 5vw, 44px);
+          line-height: 1.2;
+          margin: 8px 0 32px;
         }
-        .mini-text{color:var(--ink-dim); line-height:1.8; margin:0;}
-
-        .grid.two{display:grid; grid-template-columns:1fr; gap:18px; margin:28px 0;}
-        @media (min-width:900px){ .grid.two{grid-template-columns:1fr 1fr;} }
-
-        .card{
-          background:var(--panel); border:1px solid var(--border);
-          border-radius:var(--radius-lg); padding:20px 22px; box-shadow:0 10px 24px rgba(0,0,0,.35);
-        }
-        .card-green{ background:rgba(2,40,20,.8); border-color:rgba(34,197,94,.35); }
-        .card-ttl{ font-weight:800; margin-bottom:14px; }
-        .coin{
-          display:inline-grid; place-items:center; width:28px; height:28px; margin-right:8px;
-          background:rgba(250,204,21,.12); border:1px solid rgba(250,204,21,.4); color:var(--yellow); border-radius:50%;
+        .subttl {
+          color: var(--yellow);
+          text-align: center;
+          font-weight: 700;
+          letter-spacing: 0.06em;
+          margin-bottom: 16px;
+          font-size: 22px;
+          text-shadow: 0 0 18px rgba(245, 200, 46, 0.3);
         }
 
-        .info .row{ display:flex; gap:24px; padding:8px 0; border-bottom:1px dashed rgba(255,255,255,.06); }
-        .info .row:last-child{ border-bottom:none; }
-        .info .k{ width:180px; color:#9aa7b0; }
-        .info .v{ flex:1; color:var(--ink); }
-        .accent{ color:var(--yellow); }
-
-        .benefits{ list-style:none; margin:0; padding:0; color:var(--ink); }
-        .benefits li{ display:flex; align-items:flex-start; gap:8px; margin:10px 0; }
-        .benefits em{ color:#cfe4d6; font-style:normal; }
-        .dot{ width:10px;height:10px;border-radius:50%;}
-        .dot-g{ background:var(--green); }
-
-        .bar-row{ display:grid; grid-template-columns:160px 1fr 60px; align-items:center; gap:12px; margin:10px 0; }
-        .bar-k{ color:#c7d0d8; }
-        .bar{ height:8px; background:#1b2530; border-radius:999px; overflow:hidden; }
-        .bar span{ display:block; height:100%; background:linear-gradient(90deg,#f1f5f9,#9ca3af); }
-        .bar-v{ text-align:right; color:#c7d0d8; }
-        .note{ color:#93a0aa; font-size:13px; margin-top:12px; }
-
-        .sec-ttl{ text-align:center; font-weight:800; margin:38px 0 14px; }
-        .sec-ttl.red{ color:#fb7185; }
-        .sec-ttl.purple{ color:var(--violet); }
-        .sec-ttl.cyan{ color:var(--cyan); }
-
-        .lock-ttl{ color:#fb7185; font-weight:700; margin-bottom:8px; }
-
-        .flow.card{ display:grid; grid-template-columns:1fr; gap:18px; }
-        @media (min-width:900px){ .flow.card{ grid-template-columns:repeat(4,1fr); } }
-        .step{text-align:center;}
-        .ico{
-          width:54px; height:54px; border-radius:50%; display:inline-grid; place-items:center;
-          font-weight:800; color:#0b141b; margin-bottom:10px;
+        .panel {
+          background: var(--panel);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          padding: 24px 28px;
         }
-        .ico.gold{ background:linear-gradient(135deg,#facc15,#eab308); }
-        .ico.green{ background:linear-gradient(135deg,#22c55e,#16a34a); }
-        .ico.blue{ background:linear-gradient(135deg,#60a5fa,#3b82f6); }
-        .ico.violet{ background:linear-gradient(135deg,#a78bfa,#8b5cf6); }
-        .step-ttl{ font-weight:700; margin-bottom:4px; }
-        .step-txt{ color:#aeb8c1; }
-
-        .road.card{ display:grid; grid-template-columns:1fr; gap:14px; }
-        .q{ display:flex; align-items:center; gap:12px; }
-        .q-badge{
-          display:inline-grid; place-items:center; width:36px; height:36px; border-radius:50%;
-          color:#081017; font-weight:800;
+        .panel-lg {
+          margin-bottom: 32px;
         }
-        .qb-g{ background:linear-gradient(135deg,#34d399,#10b981); }
-        .qb-b{ background:linear-gradient(135deg,#93c5fd,#60a5fa); }
-        .qb-v{ background:linear-gradient(135deg,#c4b5fd,#a78bfa); }
-        .qb-y{ background:linear-gradient(135deg,#fde68a,#fbbf24); }
-        .q-ttl{ font-weight:800; color:var(--ink); }
-        .q-txt{ color:#aeb8c1; }
+        .panel-lead {
+          color: var(--ink);
+          opacity: 0.9;
+          line-height: 1.9;
+          margin: 0 0 20px;
+        }
+        .panel-txt {
+          color: var(--ink-dim);
+          line-height: 1.9;
+          margin: 0;
+        }
+
+        .triple {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        @media (min-width: 768px) {
+          .triple {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        .mini-card {
+          background: rgba(0, 0, 0, 0.15);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-md);
+          padding: 18px 20px;
+        }
+        .mini-badge.yellow {
+          color: var(--yellow);
+          font-weight: 700;
+          font-size: 15px;
+          padding: 0;
+          margin-bottom: 10px;
+        }
+        .mini-text {
+          color: var(--ink-dim);
+          font-size: 14px;
+          line-height: 1.8;
+          margin: 0;
+        }
+
+        .grid.two {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 24px;
+          margin: 32px 0;
+        }
+        @media (min-width: 768px) {
+          .grid.two {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+
+        .card {
+          background: var(--panel);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          padding: 24px 28px;
+        }
+        .card-green {
+          background: rgba(39, 193, 141, 0.07);
+          border-color: rgba(39, 193, 141, 0.2);
+        }
+        .card-ttl {
+          font-weight: 700;
+          font-size: 18px;
+          margin-bottom: 18px;
+          display: flex;
+          align-items: center;
+        }
+        .coin {
+          display: inline-grid;
+          place-items: center;
+          width: 32px;
+          height: 32px;
+          margin-right: 10px;
+          background: var(--yellow);
+          color: var(--black);
+          border-radius: 50%;
+          font-weight: 700;
+          font-size: 16px;
+        }
+
+        .info .row {
+          display: flex;
+          justify-content: space-between;
+          gap: 16px;
+          padding: 12px 0;
+          border-bottom: 1px solid var(--border);
+          font-size: 15px;
+        }
+        .info .row:last-child {
+          border-bottom: none;
+        }
+        .info .k {
+          color: var(--ink-dim);
+        }
+        .info .v {
+          color: var(--ink);
+          font-weight: 500;
+        }
+        .accent {
+          color: var(--yellow);
+          font-weight: bold;
+        }
+        .accent-blue {
+          color: var(--blue);
+          font-weight: bold;
+        }
+
+        .benefits {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .benefits li {
+          display: grid;
+          grid-template-columns: 16px auto;
+          align-items: flex-start;
+          gap: 12px;
+          margin-top: 16px;
+        }
+        .benefits li:first-child {
+          margin-top: 0;
+        }
+        .benefits strong {
+          font-weight: 700;
+          color: var(--ink);
+          margin-bottom: 2px;
+          display: block;
+        }
+        .benefits p {
+          color: var(--ink-dim);
+          line-height: 1.8;
+          font-size: 15px;
+          margin: 0;
+          grid-column: 2 / -1;
+        }
+        .dot {
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          background: var(--green);
+          margin-top: 7px;
+          box-shadow: 0 0 12px rgba(39, 193, 141, 0.7);
+        }
+
+        .bar-row {
+          display: grid;
+          grid-template-columns: 140px 1fr 50px;
+          align-items: center;
+          gap: 14px;
+          margin: 16px 0;
+          font-size: 15px;
+        }
+        .bar-k {
+          color: var(--ink-dim);
+        }
+        .bar {
+          height: 8px;
+          background: #252330;
+          border-radius: 999px;
+          overflow: hidden;
+        }
+        .bar span {
+          display: block;
+          height: 100%;
+          background: linear-gradient(90deg, #8194b1, #d4dbe7);
+        }
+        .bar span.bar-fill-blue {
+          background: linear-gradient(90deg, #4f96ee, #8ec1ff);
+        }
+        .bar-v {
+          text-align: right;
+          color: var(--ink-dim);
+          font-weight: 500;
+        }
+        .note {
+          color: var(--ink-dim);
+          font-size: 13px;
+          margin-top: 24px;
+          line-height: 1.7;
+          border-top: 1px solid var(--border);
+          padding-top: 16px;
+        }
+
+        .sec-ttl {
+          text-align: center;
+          font-weight: 700;
+          font-size: 22px;
+          margin: 64px 0 16px;
+        }
+        .sec-ttl.red {
+          color: var(--red);
+          text-shadow: 0 0 18px rgba(243, 102, 83, 0.3);
+        }
+        .sec-ttl.purple {
+          color: var(--violet);
+          text-shadow: 0 0 18px rgba(169, 138, 255, 0.3);
+        }
+        .sec-ttl.cyan {
+          color: var(--cyan);
+          text-shadow: 0 0 18px rgba(57, 214, 229, 0.3);
+        }
+
+        .lock-ttl {
+          color: var(--red);
+          font-weight: 700;
+          margin-bottom: 8px;
+        }
+
+        .flow.card {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
+          padding: 32px;
+        }
+        @media (min-width: 768px) {
+          .flow.card {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+        .step {
+          text-align: center;
+        }
+        .ico {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          display: inline-grid;
+          place-items: center;
+          margin-bottom: 12px;
+          padding: 16px;
+          color: white;
+        }
+        .ico.gold {
+          background: #4a3811;
+          border: 1px solid #a48333;
+        }
+        .ico.green {
+          background: #123d2f;
+          border: 1px solid #27c18d;
+        }
+        .ico.blue {
+          background: #18304e;
+          border: 1px solid #4f96ee;
+        }
+        .ico.violet {
+          background: #36295f;
+          border: 1px solid #a98aff;
+        }
+        .step-ttl {
+          font-weight: 700;
+          margin-bottom: 4px;
+        }
+        .step-txt {
+          color: var(--ink-dim);
+          font-size: 14px;
+        }
+
+        .road.card {
+          display: flex;
+          flex-direction: column;
+          gap: 1px;
+          padding: 24px;
+          background-color: var(--panel);
+        }
+        .q {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 12px 0;
+        }
+        .q-badge {
+          flex-shrink: 0;
+          display: inline-grid;
+          place-items: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          font-weight: 700;
+          font-size: 14px;
+          border: 1px solid;
+        }
+        .q-body {
+          flex-grow: 1;
+        }
+        .qb-g {
+          background: rgba(39, 193, 141, 0.1);
+          border-color: rgba(39, 193, 141, 0.4);
+          color: var(--green);
+        }
+        .qb-b {
+          background: rgba(79, 150, 238, 0.1);
+          border-color: rgba(79, 150, 238, 0.4);
+          color: var(--blue);
+        }
+        .qb-v {
+          background: rgba(169, 138, 255, 0.1);
+          border-color: rgba(169, 138, 255, 0.4);
+          color: var(--violet);
+        }
+        .qb-y {
+          background: rgba(245, 200, 46, 0.1);
+          border-color: rgba(245, 200, 46, 0.4);
+          color: var(--yellow);
+        }
+        .q-ttl {
+          font-weight: 700;
+          color: var(--ink);
+          margin-bottom: 2px;
+          font-size: 15px;
+        }
+        .q-txt {
+          color: var(--ink-dim);
+          font-size: 14px;
+          line-height: 1.6;
+        }
       `}</style>
     </section>
-  )
+  );
 }
