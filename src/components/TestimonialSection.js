@@ -1,303 +1,133 @@
-import React, { useState } from "react";
+"use client";
 
 export default function TestimonialSection() {
-  const [modalImage, setModalImage] = useState(null);
-
-  const testimonials = [
+  const members = [
     {
-      id: 1,
-      name: "50代女性 3週間使用",
-      comment: "年齢を重ねるにつれ、頬のシミや目元のクマがメイクでも隠しきれず、肌に自信を持てなくなっていました。そんなときにマザーベジタブルに出会いました。使い始めて3週間ほどで、肌の印象が見違えるように変わりました。特に気になっていた頬のシミがふんわりとカバーされるだけでなく、徐々に薄くなってきたように感じています。目元のクマやくすみもやわらぎ、肌全体が明るく均一に整ってきました。大人の肌にも無理なく使えます。"
+      name: "ジャグ・カウラ（Jag Kaurah）",
+      role: "Algae International Berhad 創設者・最高技術責任者",
+      color: "#3da2ff",
+      image: "/team1.jpg",
+      desc: "2006年より微細藻類技術開発に専念し、2008年に業界を変革する画期的特許を取得。同年に Algae International Berhad を設立。藻類バイオマス生産コストの劇的削減を実現し、気候制御透明建物での多層培養システムにより、藻類と野菜の統合生産を可能にしています。"
     },
     {
-      id: 2,
-      name: "20代女性 1ヶ月使用",
-      comment: "マザーベジタブルを使い始めてから、肌の調子が本当に変わりました。あれだけ気になっていた頬の毛穴がキュッと引き締まり、赤みや小さなブツブツも落ち着いてきました。肌全体がなめらかに整いますし、仕上がりも自然で、素肌そのものがキレイになったように見えるのが嬉しかったです。朝のメイクが長時間キープできて、化粧直しの回数もぐっと減りました。メイクとスキンケアを同時に叶えてくれる頼れるアイテムとして、毎日の必需品になっています。"
+      name: "エロール・ペレラ（Errol Perera）",
+      role: "Revoganix株式会社 代表取締役 / ASEAN持続可能農業アドバイザー",
+      color: "#00db6a",
+      image: "/team2.jpg",
+      desc: "持続可能農業、水産養殖、微生物学分野における35年以上の専門知識を有するペレラ氏は、ASEAN事務局のチーフコンサルタントおよびスリランカ水産大臣の公式アドバイザーを歴任。革新的水産養殖システムと広範囲な経験により、貴重な地域専門知識と政府関係を提供しています。"
     },
     {
-      id: 3,
-      name: "80代女性 1ヶ月使用",
-      comment: "若い頃から外に出ることが多かったせいか、いつの間にか腕にシミや痣が沢山できてしまい、年齢を感じるたびに少し気になっていました。もう仕方ないと諦めていましたが、娘にすすめられてこちらを使い始めました。使い始めてしばらくすると、濃かったシミと痣が少しずつ薄くなってきて、肌の色も以前より均一になってきたように思います。ごわついていた腕も、なめらかになった気がします。年を重ねてもきちんとお手入れをしてあげれば、肌は応えてくれるものなんですね。"
+      name: "松浦 亮介（Matsuura Ryosuke）",
+      role: "Algae International Japan株式会社 代表取締役",
+      color: "#c580ff",
+      image: "/team3.jpg",
+      desc: "京都大学大学院にて数理工学を専攻、大手IT企業での豊富な研究開発経験を経て、デジタルマーケティング分野に転身。現在はサステナビリティとイノベーション分野のイニシアチブをリード。技術的専門性とビジネス手腕の独特な組み合わせにより、環境ソリューションの推進力として位置づけられています。"
+    },
+    {
+      name: "熊木 景（Kumaki Kei）",
+      role: "dotpb株式会社 代表取締役",
+      color: "#ff9900",
+      image: "/team4.jpg",
+      desc: "日本のペット教育分野において日本一の実績を獲得。デジタル領域への専門性の拡張に成功し、高度なマーケティングおよびブランディング戦略を適用。複数の産業に新たな価値を創造しています。その実績は専門知識を幅広く市場応用へとスケールする能力を実証しています。"
     }
   ];
 
-  const surveyResults = [
-    { label: "化粧崩れが減った", percentage: 98 },
-    { label: "肌の調子が良くなった", percentage: 95 },
-    { label: "陶器肌になれた", percentage: 97 },
-    { label: "リピートしたい", percentage: 99 }
-  ];
-
   return (
-    <>
-      <section className="testimonial-section">
-        <div className="container">
-          <div className="header">
-            <p className="section-label">お客様の声</p>
-            <h2 className="section-title">実際にご使用いただいた<br />お客様の喜びの声</h2>
-            <div className="section-separator" />
-          </div>
+    <section style={s.section}>
+      <div style={s.container}>
+        {/* ヘッダー */}
+        <div style={s.header}>
+          <span style={s.label}>2. チームメンバー</span>
+          <h2 style={s.title}>世界クラスの専門チーム</h2>
+        </div>
 
-          <div className="card-grid">
-            {testimonials.map(t => (
-              <div key={t.id} className="testimonial-card">
-                <h4 className="card-label">使用前</h4>
-                <div className="image-box" onClick={() => setModalImage(`before${t.id}`)}>
-                  <img
-                    src={`/before${t.id}.jpg`}
-                    alt={`Before Photo ${t.id}`}
-                    style={{
-                      width: "100%",
-                      aspectRatio: "1 / 1",
-                      objectFit: "cover",
-                      borderRadius: "1rem"
-                    }}
-                  />
-                  <div className="badge">Before</div>
-                </div>
-
-                <h4 className="card-label">使用後</h4>
-                <div className="image-box after" onClick={() => setModalImage(`after${t.id}`)}>
-                  <img
-                    src={`/after${t.id}.jpg`}
-                    alt={`After Photo ${t.id}`}
-                    style={{
-                      width: "100%",
-                      aspectRatio: "1 / 1",
-                      objectFit: "cover",
-                      borderRadius: "1rem"
-                    }}
-                  />
-                  <div className="badge after">After</div>
-                </div>
-                    <p className="name">{t.name}</p>
-                <p className="comment">{t.comment}</p>
-                
+        {/* メンバーカード */}
+        <div style={s.grid}>
+          {members.map((m, i) => (
+            <div key={i} style={s.card}>
+              <div style={s.avatarWrap}>
+                <img
+                  src={m.image}
+                  alt={m.name}
+                  style={{
+                    width: 100,
+                    height: 100,
+                    borderRadius: "50%",
+                    border: `4px solid ${m.color}`,
+                    objectFit: "cover"
+                  }}
+                />
               </div>
-            ))}
-          </div>
-
-          {/*<div className="survey-box">
-            <h3 className="survey-title">ご愛用者様アンケート結果</h3>
-            <div className="survey-grid">
-              {surveyResults.map((r, i) => (
-                <div key={i}>
-                  <div className="survey-bar-header">
-                    <span>{r.label}</span>
-                    <span className="highlight">{r.percentage}%</span>
-                  </div>
-                  <div className="survey-bar-bg">
-                    <div className="survey-bar-fill" style={{ width: `${r.percentage}%` }} />
-                  </div>
-                </div>
-              ))}
+              <h3 style={s.name}>{m.name}</h3>
+              <p style={{ ...s.role, color: m.color }}>{m.role}</p>
+              <p style={s.desc}>{m.desc}</p>
             </div>
-            <p className="note">※2024年10月実施 n=500</p>
-          </div>*/}
+          ))}
         </div>
-      </section>
-
-      {modalImage && (
-        <div className="modal" onClick={() => setModalImage(null)}>
-          <button className="modal-close">×</button>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={`/${modalImage}.jpg`}
-              alt={`拡大画像 ${modalImage}`}
-              style={{ maxWidth: "90vw", maxHeight: "80vh", borderRadius: "1rem" }}
-            />
-          </div>
-        </div>
-      )}
-
-      <style jsx>{`
-        .testimonial-section {
-          padding: 5rem 1rem 6rem;
-          background: #f9fafb;
-        }
-        .container {
-          max-width: 1280px;
-          margin: 0 auto;
-        }
-        .header {
-          text-align: center;
-          margin-bottom: 4rem;
-        }
-        .section-label {
-          color: #b8860b;
-          font-size: 0.9rem;
-          letter-spacing: 0.1em;
-          margin-bottom: 1rem;
-        }
-        .section-title {
-          font-size: 2rem;
-          color: #2d2d2d;
-          margin-bottom: 1.5rem;
-        }
-        .section-separator {
-          width: 80px;
-          height: 4px;
-          background: #b8860b;
-          margin: 0 auto;
-        }
-
-        .card-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-        @media (min-width: 768px) {
-          .card-grid {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
-
-        .testimonial-card {
-          background: white;
-          border-radius: 1.5rem;
-          padding: 2rem;
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-          text-align: center;
-        }
-       .card-label {
-  color: #b8860b;
-  margin-bottom: 0.5rem;
-  font-weight: 300;
-  text-align: left; /* 👈 追加 */
-}
-        .image-box {
-          
-          border-radius: 1rem;
-          padding: 0;
-          margin-bottom: 1.5rem;
-          position: relative;
-          cursor: pointer;
-          overflow: hidden;
-        }
-        
-       
-        .badge {
-          position: absolute;
-          bottom: 12px;
-          left: 12px;
-          background: rgba(255,255,255,0.9);
-          padding: 0.4rem 1rem;
-          border-radius: 999px;
-          font-size: 0.8rem;
-          font-weight: 600;
-          color: #b8860b;
-        }
-        .badge.after {
-          background: linear-gradient(to right, #b8860b, #d4c4b0);
-          color: #000;
-        }
-
-        .comment {
-          font-size: 0.95rem;
-          color: #333;
-          margin: 1rem 0;
-          line-height: 1.6;
-          text-align:left!important;
-        }
-        .name {
-          font-size: 1.1rem;
-          color: #b8860b;
-        }
-
-        .survey-box {
-          background: white;
-          padding: 2rem;
-          border-radius: 1.5rem;
-          margin-top: 4rem;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-        }
-        .survey-title {
-          font-size: 1.5rem;
-          text-align: center;
-          margin-bottom: 2rem;
-          color: #2d2d2d;
-        }
-        .survey-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 1.5rem;
-        }
-         @media (max-width: 768px) {
-          h2 {
-          font-size: 1.4rem !important;
-          line-height: 1.3 !important;
-           }
-        }
-        @media (min-width: 768px) {
-          .survey-grid {
-            grid-template-columns: 1fr 1fr;
-          }
-        }
-        .survey-bar-header {
-          display: flex;
-          justify-content: space-between;
-          margin-bottom: 0.3rem;
-          font-size: 0.9rem;
-          color: #444;
-        }
-        .highlight {
-          font-weight: bold;
-          color: #b8860b;
-        }
-        .survey-bar-bg {
-          background: #ddd;
-          border-radius: 999px;
-          height: 12px;
-          overflow: hidden;
-        }
-        .survey-bar-fill {
-          background: linear-gradient(to right, #b8860b, #d4c4b0);
-          height: 100%;
-          transition: width 1s ease;
-        }
-        .note {
-          font-size: 0.75rem;
-          text-align: center;
-          color: #888;
-          margin-top: 1rem;
-        }
-
-        .modal {
-          position: fixed;
-          inset: 0;
-          background: rgba(0,0,0,0.9);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 1000;
-        }
-        .modal-close {
-          position: absolute;
-          top: 20px;
-          right: 30px;
-          font-size: 2rem;
-          color: white;
-          background: none;
-          border: none;
-          cursor: pointer;
-        }
-        .modal-content {
-          background: #f0f0f0;
-          border-radius: 1rem;
-          padding: 2rem;
-          text-align: center;
-          max-width: 90vw;
-          max-height: 90vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        .modal-content img {
-          width: 100%;
-          height: auto;
-          border-radius: 1rem;
-        }
-      `}</style>
-    </>
+      </div>
+    </section>
   );
 }
+
+/* ====== styles ====== */
+const s = {
+  section: {
+    background: "#000",
+    padding: "6rem 1rem",
+    color: "#e9f9ee"
+  },
+  container: {
+    maxWidth: 1200,
+    margin: "0 auto"
+  },
+  header: {
+    textAlign: "center",
+    marginBottom: "3rem"
+  },
+  label: {
+    display: "inline-block",
+    padding: "4px 14px",
+    borderRadius: 999,
+    background: "rgba(255,255,255,0.08)",
+    color: "#9aa",
+    fontSize: 13,
+    marginBottom: 12
+  },
+  title: {
+    fontSize: "2rem",
+    fontWeight: 800
+  },
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "1fr",
+    gap: "2rem"
+  },
+  card: {
+    background: "rgba(20,20,30,0.8)",
+    borderRadius: 16,
+    padding: "2rem",
+    boxShadow: "0 12px 40px rgba(0,0,0,0.35)",
+    textAlign: "center"
+  },
+  avatarWrap: {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "1rem"
+  },
+  name: {
+    fontSize: "1.25rem",
+    fontWeight: 700,
+    marginBottom: "0.5rem"
+  },
+  role: {
+    fontSize: "0.95rem",
+    fontWeight: 500,
+    marginBottom: "1rem"
+  },
+  desc: {
+    fontSize: "0.9rem",
+    color: "#ccc",
+    lineHeight: 1.7,
+    textAlign: "left"
+  }
+};

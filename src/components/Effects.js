@@ -1,294 +1,323 @@
 "use client";
 
-import { useState } from "react";
-
-export default function ProductSection() {
-  const [selectedSize, setSelectedSize] = useState("2g");
-
-  const products = [
+export default function EffectsSection() {
+  const items = [
     {
-      size: "1g",
-      title: "お試しサイズ",
-      description: "1g - 約30日分",
-      features: ["マザーベジタブル 1g配合", "約30日分", "携帯に便利なコンパクトケース"],
-      originalPrice: "¥3,300",
-      price: "¥2,200",
-      popular: false
+      no: "1.",
+      title: "食品分野",
+      accent: "生命力の向上",
+      icon: "leaf",
+      text: [
+        "スピルリナ等の高栄養スーパーフードにより人類の栄養状態を根本から改善します。",
+        "機能性食品原材料は病気予防と健康寿命の延伸に貢献します。"
+      ],
     },
     {
-      size: "2g",
-      title: "スタンダードサイズ",
-      description: "2g - 約60日分",
-      features: ["マザーベジタブル 2g配合", "約60日分", "携帯に便利なコンパクトケース"],
-      originalPrice: "¥5,500",
-      price: "¥3,300",
-      popular: true
+      no: "2.",
+      title: "医薬品分野",
+      accent: "自然治癒力の支援",
+      icon: "shield",
+      text: [
+        "フコイダン、フコイグナン、アスタキサンチン、EPA・DHA などの天然由来の治療成分を生産します。",
+        "副作用の少ない治療選択肢により、身体に負担をかけない医療の実現を目指します。"
+      ],
     },
     {
-      size: "5g",
-      title: "お得な大容量",
-      description: "5g - 約150日分",
-      features: ["マザーベジタブル 5g配合", "約150日分", "特別な大容量ラグジュアリーケース"],
-      originalPrice: "¥8,800",
-      price: "¥5,500",
-      popular: false
-    }
-  ];
-
-  const ingredient = {
-    name: "マザーベジタブル",
-    description: "35億年前に誕生した地球最初の生命体",
-    details: "独自の吸着機能により、24時間美しさを保ちます。"
-  };
-
-  const effects = [
-    { title: "化粧崩れ防止効果", description: "汗やテカリをしっかり吸着し、崩れを防ぎます" },
-    { title: "透明感のある陶器肌", description: "細かい粒子が肌を整え、美しい陶器肌を再現" },
-    { title: "トーンアップ効果", description: "肌を明るく見せ、自然な輝きを与えます" },
-    { title: "スキンケア効果", description: "肌を保護しながら美しく整えます" }
+      no: "3.",
+      title: "工業品分野",
+      accent: "地球に優しい製造",
+      icon: "wrench",
+      text: [
+        "バイオプラスチックや新素材の開発により石油依存からの脱却を実現します。",
+        "持続可能な生産手段により環境負荷の少ない工業製品を生産します。"
+      ],
+    },
+    {
+      no: "4.",
+      title: "養殖分野",
+      accent: "海洋環境の回復",
+      icon: "waves",
+      text: [
+        "水質浄化システムにより汚染された水域の自然回復を促進します。",
+        "天然飼料により化学飼料に依存しない健全的な養殖を実現します。"
+      ],
+    },
+    {
+      no: "5.",
+      title: "農業分野",
+      accent: "土壌の再生",
+      icon: "sprout",
+      text: [
+        "バイオスティミュラントにより化学肥料を使わない豊かな土壌作りを推進します。",
+        "土壌改良剤により劣化した大地の自然回復力を向上させます。"
+      ],
+    },
+    {
+      no: "6.",
+      title: "バイオマス分野",
+      accent: "グリーンエネルギー",
+      icon: "tank",
+      text: [
+        "バイオディーゼル、バイオエタノール、バイオガスの生産により化石燃料からの完全脱却を目指します。",
+        "カーボンニュートラルにより CO₂ 排出量実質ゼロを実現します。"
+      ],
+    },
+    {
+      no: "7.",
+      title: "エネルギー分野",
+      accent: "持続可能な未来",
+      icon: "bolt",
+      text: [
+        "液体・気体燃料、電力生成により再生可能エネルギーの安定供給を実現します。",
+        "エネルギー自給化により地域でのエネルギー独立を後押しします。"
+      ],
+    },
+    {
+      no: "8.",
+      title: "FMCG 分野",
+      accent: "日常生活の革新",
+      icon: "pack",
+      text: [
+        "洗剤、シャンプー、化粧品、衛生用品において環境負荷を最小限に抑えた生分解性の高い日用品を提供。",
+        "持続可能な消費行動により、人と地球に優しい毎日を実現します。"
+      ],
+    },
   ];
 
   return (
-    <section className="sec" style={{ padding: "0.01rem 0.1rem 2.6rem 0.01rem", backgroundColor: "#f9fafb" }}>
-      <div className="haba" style={{ maxWidth: "1280px", margin: "120px auto 0 auto", padding: "0 1rem" }}>
+    <section style={s.section}>
+      <div style={s.wrap}>
 
-        {/* 成分・効果 */}
-        <div style={{ marginTop: "2rem" }}>
-          <h3 style={{ fontSize: "1.5rem", fontWeight: 300, marginBottom: "3rem", textAlign: "center", color: "#2d2d2d", letterSpacing: "0.05em" }}>成分・効果</h3>
-
-          <div style={{ maxWidth: "800px", margin: "0 auto 4rem" }}>
-            <div style={{
-              background: "linear-gradient(to bottom right, #ffffff, #f8f8f8)",
-              borderRadius: "1.5rem",
-              padding: "2rem",
-              border: "1px solid rgba(184, 134, 11, 0.3)",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.05)"
-            }}>
-              <div style={{ textAlign: "center" }}>
-                <div style={{
-                  width: "96px",
-                  height: "96px",
-                  borderRadius: "50%",
-                  background: "linear-gradient(to bottom right, rgba(184,134,11,0.2), rgba(212,196,176,0.2))",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  margin: "0 auto 1.5rem"
-                }}>
-                  <svg viewBox="0 0 24 24" style={{ width: "48px", height: "48px", color: "#b8860b" }}>
-                    <path fill="currentColor" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
-                  </svg>
-                </div>
-                <h4 style={{ fontSize: "1.5rem", fontWeight: 300, color: "#b8860b", marginBottom: "0.3rem" }}>主成分</h4>
-                <p style={{ fontSize: "1.4rem", fontWeight: 500, color: "#2d2d2d", marginBottom: "0.5rem" }}>{ingredient.name}</p>
-                <p style={{ fontSize: "1rem", color: "#555", marginBottom: "1rem" }}>{ingredient.description}</p>
-                <p style={{ fontSize: "0.875rem", color: "#777", lineHeight: "1.7", maxWidth: "640px", margin: "0 auto" }}>{ingredient.details}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* 期待できる効果カード */}
-          <div style={{
-            backgroundColor: "#fff",
-            borderRadius: "1.25rem",
-            padding: "2rem",
-            maxWidth: "1224px",
-            margin: "0 auto",
-            boxShadow: "0 6px 16px rgba(0,0,0,0.08)"
-          }}>
-            <h4 style={{ fontSize: "1.2rem", fontWeight: 300, color: "#2d2d2d", marginBottom: "1.5rem", textAlign: "center" }}>期待できる効果</h4>
-
-            <div className="effects-grid" style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "1.5rem"
-            }}>
-              {effects.map((effect, index) => (
-                <div key={index} style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  padding: "0.3rem",
-                  borderRadius: "1rem",
-                  transition: "background-color 0.3s ease"
-                }}>
-                  <span style={{
-                    width: "32px",
-                    height: "32px",
-                    background: "linear-gradient(to bottom right, rgba(184,134,11,0.2), rgba(212,196,176,0.2))",
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginRight: "1rem"
-                  }}>
-                    <svg viewBox="0 0 24 24" style={{ width: "20px", height: "20px", color: "#b8860b" }}>
-                      <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                  </span>
-                  <div>
-                    <p style={{ fontSize: "1rem", fontWeight: 500, color: "#b8860b", marginBottom: "0.25rem" }}>{effect.title}</p>
-                    <p style={{ fontSize: "0.875rem", color: "#555" }}>{effect.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div style={{
-            backgroundColor: "#fff",
-            borderRadius: "1.25rem",
-            padding: "2rem",
-            maxWidth: "1224px",
-            margin: "80px auto 80px auto",
-            boxShadow: "0 6px 16px rgba(0,0,0,0.08)"
-          }}>
-                <h4 className="add-title" style={{ fontSize: "1.3rem", fontWeight: 600, color: "#b8860b", marginBottom: "1.5rem", textAlign: "center" }}>「顔のテカリを消す」効果は<span className="sp" />マザベジ形状ならでは</h4>
-                
-            {/* ▼ 追加：4つの効果の下に縦並び画像（gap 20px） */}
-            <div className="add-flex" style={{
-              display: "flex",
-              gap: "20px",
-              justifyContent: "space-between",
-              marginTop: "2rem"
-            }}>
-            <div className="one-b">
-            <p className="add-title" style={{ fontSize: "1.2rem", fontWeight: 600, color: "black", marginBottom: "1", textAlign: "center" }}>皮脂の油分がある状態</p>
-              <img className="spwidth"
-                src="/doc1.jpg"
-                alt="製品資料 1"
-                loading="lazy"
-                style={{ width: "98%", height: "auto", borderRadius: "0.75rem", }}
-              />
-              <div>
-              <div style={{
-              textAlign:"center",
-            }}>
-              <img className="spwidth"
-                src="/doc1-a.jpg"
-                alt="製品資料 1"
-                loading="lazy"
-                style={{ width: "86%", height: "auto", borderRadius: "0.75rem", }}
-              />
-              </div>
-            </div>
-            <div className="spwidth" style={{ width: "86%", margin: "30px auto 0 auto" }}>
-            <p className="add-discription" style={{ fontSize: "1rem", fontWeight: 400, color: "black", marginBottom: "1", textAlign: "left" }}>肌のテカリの原因は、皮脂の油分が同じ形状であり、同じ方向に光が跳ね返るため</p>
-            <p className="add-discription2" style={{marginTop:"30px", fontSize: "1rem", fontWeight: 400, color: "black", marginBottom: "1", textAlign: "left" }}><span style={{fontWeight:"600"}}>【ケミカルシリカを塗るリスク】</span><br/>薬品残りがあり肌のアレルギーリスクがあるほか、形状も同じなので肌に塗るとテカリが出る</p>
-            </div>
-            </div>
-            
-            <div className="one-b">
-            <p className="add-title" style={{ fontSize: "1.2rem", fontWeight: 600, color: "black", marginBottom: "1", textAlign: "center" }}>マザベジシリカ塗布後</p>
-              <img className="spwidth"
-                src="/doc2.jpg"
-                alt="製品資料 2"
-                loading="lazy"
-                style={{ width: "98%", height: "auto", borderRadius: "0.75rem", }}
-              />
-              <div>
-              <div style={{
-              textAlign:"center",
-            }}>
-              <img className="spwidth"
-                src="/doc2-b.jpg"
-                alt="製品資料 2"
-                loading="lazy"
-                style={{ width: "86%", height: "auto", borderRadius: "0.75rem", }}
-              />
-              </div>
-              </div>
-              <div className="spwidth" style={{ width: "86%", margin: "30px auto 0 auto" }}>
-              <p className="add-discription" style={{ fontSize: "1rem", fontWeight: 400, color: "black", marginBottom: "1", textAlign: "left" }}>マザベジシリカは、天然の植物の形のためパウダーすべてに個性があり、微かな個性差がある。そのため、光の跳ね返りもランダムに</p>
-              <p className="add-discription2" style={{marginTop:"30px", fontSize: "1rem", fontWeight: 400, color: "black", marginBottom: "1", textAlign: "left" }}><span style={{fontWeight:"600"}}>【マザベジシリカを塗るメリット】</span><br/>皮脂の油分を吸い取り、空気中の水分もキャッチ。潤いもあるのにテカらず、抗酸化作用で肌も清潔に</p>
-            </div>
-              </div>
-              
-            </div>
-            {/* ▲ 追加ここまで */}
-                <p className="add-title" style={{ fontSize: "1.5rem", fontWeight: 600, color: "black", marginTop:"30px", marginBottom: "1", textAlign: "center" }}>さっと10秒塗るだけで清潔感をゲット→<span className="sp" />デートや商談前の必須アイテムに</p>
-
-          </div>
-          
-
-          <div className="spbottom" style={{
-            backgroundColor: "#fff",
-            borderRadius: "1.25rem",
-            padding: "2rem",
-            maxWidth: "1224px",
-            margin: "80px auto 80px auto",
-            boxShadow: "0 6px 16px rgba(0,0,0,0.08)"
-          }}>
-                <h4 className="add-title" style={{ fontSize: "1.3rem", fontWeight: 600, color: "#b8860b", marginBottom: "1.5rem", textAlign: "center" }}>睡眠前の「すっぴん」も<span className="sp" />トーンアップでナチュラルに
-</h4>
-                
-            {/* ▼ 追加：4つの効果の下に縦並び画像（gap 20px） */}
-            <div className="add-flex" style={{
-              display: "flex",
-              gap: "20px",
-              justifyContent: "space-between",
-              marginTop: "2rem"
-            }}>
-            <div>
-            <p className="add-title" style={{ fontSize: "1.2rem", fontWeight: 600, color: "black", marginBottom: "1", textAlign: "center" }}>シワや毛穴がある状態</p>
-              <img
-                src="/doc3.jpg"
-                alt="製品資料 1"
-                loading="lazy"
-                style={{ width: "98%", height: "auto", borderRadius: "0.75rem", }}
-              />
-              <div>
-              
-            </div>
-            <div className="spwidth" style={{ width: "86%", margin: "30px auto 0 auto" }}>
-            <p className="add-discription" style={{ fontSize: "1rem", fontWeight: 400, color: "black", marginBottom: "1", textAlign: "left" }}>寝る前などのすっぴんの際にはどうしてもシワや毛穴が目立ってしまう</p>
-            <p className="add-discription2" style={{marginTop:"20px", fontSize: "1rem", fontWeight: 400, color: "black", marginBottom: "1", textAlign: "left" }}><span style={{fontWeight:"600"}}>【ファンデーションを塗ると割れることも】</span><br/>寝る前に使用できないだけでなく、ファンデーションは粘土のようにまとまっているため、乾くと割れる</p>
-            </div>
-            </div>
-            
-            <div className="one-b">
-            <p className="add-title" style={{ fontSize: "1.2rem", fontWeight: 600, color: "black", marginBottom: "1", textAlign: "center" }}>マザベジシリカ塗布後</p>
-              <img
-                src="/doc4.jpg"
-                alt="製品資料 2"
-                loading="lazy"
-                style={{ width: "98%", height: "auto", borderRadius: "0.75rem", }}
-              />
-              <div>
-              
-              </div>
-              <div className="spwidth" style={{ width: "86%", margin: "30px auto 0 auto" }}>
-            <p className="add-discription" style={{ fontSize: "1rem", fontWeight: 400, color: "black", marginBottom: "1", textAlign: "left" }}>寝る前にも使えるマザベジシリカは、シワや毛穴にも入り込んで目立たせない</p>
-            <p className="add-discription2" style={{marginTop:"20px", fontSize: "1rem", fontWeight: 400, color: "black", marginBottom: "1", textAlign: "left" }}><span style={{fontWeight:"600"}}>【マザベジシリカを塗るメリット】</span><br/>気になるところを隠しながらお肌を清潔に。またシリカは分かれているので「割れ」もない</p>
-            </div>
-              </div>
-              
-            </div>
-            {/* ▲ 追加ここまで */}
-                <p className="add-title" style={{ fontSize: "1.5rem", fontWeight: 600, color: "black", marginTop:"30px", marginBottom: "1", textAlign: "center" }}>寝る前だけでなく、化粧のできない<span className="sp" />医療や介護でも活躍。24時間綺麗に
-
-</p>
-
-          </div>
+        {/* ラベル・見出し・サブ */}
+        <div style={s.head}>
+          <span style={s.label}>産業展開</span>
+          <h2 style={s.title}>地球再生の8つの産業アプローチ</h2>
+          <p style={s.sub}>
+            AIB社の「マザーベジタブル」は多様な産業応用が期待されており、以下の 8 つの分野にて展開が始まっています。
+          </p>
         </div>
 
-      </div>
-      <style jsx>{`
-.sp{display:none}
+        {/* 8つのカード */}
+        <div style={s.grid}>
+          {items.map((it, i) => (
+            <div key={i} style={s.card}>
+              <div style={s.iconBadge}>{renderIcon(it.icon)}</div>
 
-  @media (max-width: 768px) {
-    .haba{margin: 60px auto 0 auto!important}
-    h3 { font-size: 1.36rem !important; }
-    /* スマホで効果グリッドを1列に */
-    :global(.effects-grid) { grid-template-columns: 1fr !important; }
-    .add-title{font-size:1rem!important;}
-    .add-flex{display:block!important;}
-    .sp{display:block}
-    .one-b{margin-top:40px!important;}
-    .sec{padding-bottom:1px!important;}
-    .spwidth{width:100%!important}
-    .spbottom{margin: 70px auto 30px auto!important;}
-  }
-`}</style>
+              <h3 style={s.cardTitle}>
+                {it.no} {it.title}
+              </h3>
+              <p style={s.accent}>{it.accent}</p>
+
+              {it.text.map((t, idx) => (
+                <p key={idx} style={s.cardText}>{t}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* 最下部の説明カード */}
+        <div style={s.bottomCard}>
+          <h3 style={s.bottomHeading}>施設数と環境改善効果の関係</h3>
+          <p style={s.bottomText}>
+            藻類培養技術を用いた均一化生産システムの施設は太陽光発電および蓄電システムを有しており、自社エネルギーで 24 時間 365 日稼働し、CO₂ の安定的かつ効率的な吸収を実証済みであり、技術の商業化に向けた確固たるエビデンスを有しています。
+          </p>
+          <p style={s.bottomText}>
+            MOTHER VEGETABLES 施設の建設数と地球の健康改善効果は完全に比例関係にあります。1 つの施設が年間 X トンの CO₂ 削減を実現する場合、10 の施設では 10 倍、100 の施設では 100 倍、1000 の施設では 1000 倍の効果が得られます。この数学的な比例関係により、施設を建設すればするほど大気中 CO₂ 濃度が低下し、酸素濃度が向上します。
+          </p>
+        </div>
+      </div>
+
+      {/* レスポンシブ */}
+      <style jsx>{`
+        @media (max-width: 1024px) {
+          :global(.effects-grid) { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+        }
+        @media (max-width: 720px) {
+          :global(.effects-grid) { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   );
+}
+
+/* ===== helpers ===== */
+function renderIcon(kind) {
+  const base = { width: 22, height: 22, fill: "currentColor" };
+  switch (kind) {
+    case "leaf":
+      return (
+        <svg viewBox="0 0 24 24" {...base}>
+          <path d="M5 21c8 0 14-6 14-14V3h-4C7 3 3 7 3 15v6h2z" />
+        </svg>
+      );
+    case "shield":
+      return (
+        <svg viewBox="0 0 24 24" {...base}>
+          <path d="M12 2l7 4v6c0 5-3.5 9-7 10-3.5-1-7-5-7-10V6l7-4z" />
+        </svg>
+      );
+    case "wrench":
+      return (
+        <svg viewBox="0 0 24 24" {...base}>
+          <path d="M22 19l-6.3-6.3a6 6 0 01-7.6-7.6L9 7l3-3 2.9 1.9A6 6 0 0115.7 12L22 18.3 22 19zM2 22l6-6" />
+        </svg>
+      );
+    case "waves":
+      return (
+        <svg viewBox="0 0 24 24" {...base}>
+          <path d="M3 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2M3 17c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2" />
+        </svg>
+      );
+    case "sprout":
+      return (
+        <svg viewBox="0 0 24 24" {...base}>
+          <path d="M12 22v-8M5 9c0-3 2.5-5 7-5-1 3-3 5-7 5zm14 0c-4 0-6-2-7-5 4.5 0 7 2 7 5z" />
+        </svg>
+      );
+    case "tank":
+      return (
+        <svg viewBox="0 0 24 24" {...base}>
+          <path d="M7 2h10l2 5v15H5V7l2-5zm0 5h10" />
+        </svg>
+      );
+    case "bolt":
+      return (
+        <svg viewBox="0 0 24 24" {...base}>
+          <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" />
+        </svg>
+      );
+    case "pack":
+      return (
+        <svg viewBox="0 0 24 24" {...base}>
+          <path d="M7 2h10l2 4v16H5V6l2-4zm0 4h10M7 10h10M7 14h10" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
+/* ===== styles ===== */
+const GREEN = "#13d563";
+const EDGE = "rgba(19, 213, 99, 0.28)";
+
+const s = {
+  section: {
+    background: "#080b08",
+    padding: "6rem 1rem 5rem",
+  },
+  wrap: { maxWidth: 1200, margin: "0 auto" },
+
+  head: { textAlign: "center", marginBottom: 36 },
+  label: {
+    display: "inline-block",
+    padding: "6px 14px",
+    borderRadius: 999,
+    background: "rgba(19,213,99,.12)",
+    color: GREEN,
+    fontSize: 13,
+    letterSpacing: 1.2,
+    marginBottom: 12,
+    border: `1px solid ${EDGE}`,
+  },
+  title: {
+    color: "#eaf7ee",
+    fontSize: "clamp(26px, 3.6vw, 44px)",
+    lineHeight: 1.15,
+    margin: "6px 0 10px",
+    fontWeight: 800,
+  },
+  sub: {
+    color: "#cfeee0",
+    opacity: 0.85,
+    fontSize: 14,
+    maxWidth: 860,
+    margin: "0 auto",
+  },
+
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(4, minmax(0,1fr))",
+    gap: 22,
+    marginTop: 28,
+  },
+
+  card: {
+    position: "relative",
+    background: "rgba(6, 12, 8, 0.55)",
+    border: `1px solid ${EDGE}`,
+    borderRadius: 16,
+    padding: "22px 20px 16px",
+    boxShadow: "0 20px 60px rgba(0,0,0,.25)",
+    backdropFilter: "blur(2px)",
+  },
+  iconBadge: {
+    width: 42,
+    height: 42,
+    borderRadius: 12,
+    background: "rgba(19,213,99,.12)",
+    color: GREEN,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 14,
+    border: `1px solid ${EDGE}`,
+  },
+  cardTitle: {
+    color: "#eaf7ee",
+    fontWeight: 700,
+    fontSize: 18,
+    marginBottom: 6,
+  },
+  accent: {
+    color: GREEN,
+    fontSize: 14,
+    fontWeight: 700,
+    marginBottom: 12,
+  },
+  cardText: {
+    color: "#cfeee0",
+    opacity: 0.9,
+    fontSize: 14,
+    lineHeight: 1.7,
+    marginBottom: 8,
+  },
+
+  bottomCard: {
+    marginTop: 34,
+    background: "rgba(12, 18, 24, 0.85)",
+    border: "1px solid rgba(200,255,230,.12)",
+    borderRadius: 16,
+    padding: "26px 24px",
+    color: "#dfeff0",
+    textAlign: "center",
+  },
+  bottomHeading: {
+    fontSize: 20,
+    fontWeight: 800,
+    marginBottom: 12,
+  },
+  bottomText: {
+    fontSize: 14,
+    lineHeight: 1.9,
+    color: "#cfeee0",
+    maxWidth: 980,
+    margin: "0 auto 8px",
+  },
+};
+
+/* 画面幅に応じた列数を CSS-in-JS で補助（古いブラウザ向けフォールバック不要なら省略可） */
+if (typeof window !== "undefined") {
+  const mq2 = window.matchMedia("(max-width: 1024px)");
+  const mq1 = window.matchMedia("(max-width: 720px)");
+  const applyCols = () => {
+    s.grid.gridTemplateColumns = mq1.matches
+      ? "1fr"
+      : mq2.matches
+      ? "repeat(2, minmax(0,1fr))"
+      : "repeat(4, minmax(0,1fr))";
+  };
+  applyCols();
+  mq1.addEventListener?.("change", applyCols);
+  mq2.addEventListener?.("change", applyCols);
 }
