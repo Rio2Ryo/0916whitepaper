@@ -22,13 +22,13 @@ export default function Hero() {
       {/* Background (黒ベース) */}
       <div className="bg-wrap">
         <Image
-          src="/hero-earth-regeneration-Dnk2z_VF.png"
+          src="/earth-regeneration-darkened.png" // ここを新しい画像パスに変更します
           alt="Earth Regeneration"
           fill
           style={{ objectFit: 'cover' }}
           priority
         />
-        {/* 黒を強く出すためのオーバーレイ */}
+        {/* 黒を強く出すためのオーバーレイ - より暗くするために不透明度を上げました */}
         <div className="bg-overlay" />
         <div className="bg-vignette" />
       </div>
@@ -142,7 +142,7 @@ export default function Hero() {
           --glass-bg: rgba(6, 18, 12, 0.68);
 
           /* 黒を強く出すためのオーバーレイ */
-          --overlay: rgba(0, 0, 0, 0.82);
+          --overlay: rgba(0, 0, 0, 0.9); /* 元の0.82から0.9に上げて、より暗くしました */
         }
 
         .hero {
