@@ -92,6 +92,78 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
+
+          {/* Version バッジ */}
+          <div style={styles.versionWrap}>
+            <span style={styles.versionBadge}>
+              <svg width="16" height="16" viewBox="0 0 24 24" style={{ marginRight: 8 }}>
+                <path
+                  d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"
+                  fill="currentColor"
+                />
+              </svg>
+              Version 1.0.0 - 革命的環境技術
+            </span>
+          </div>
+
+          {/* 3つのボタン行 */}
+          <div style={styles.actionRow}>
+            <button style={{ ...styles.actionBtn, ...styles.primaryBtn }}>
+              <span style={styles.btnIconCircle}>
+                <svg width="12" height="12" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" fill="currentColor" />
+                </svg>
+              </span>
+              プロジェクト詳細を見る
+            </button>
+
+            <button style={styles.actionBtn}>
+              <span style={styles.btnIconCircle}>
+                <svg width="12" height="12" viewBox="0 0 24 24">
+                  <path
+                    d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5v3m0 14v3m-9-9h3m14 0h3"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
+              トークン情報
+            </button>
+
+            <button style={styles.actionBtn}>
+              <span style={styles.btnIconCircle}>
+                <svg width="12" height="12" viewBox="0 0 24 24">
+                  <path
+                    d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+              ホワイトペーパー
+            </button>
+          </div>
+
+          {/* 詳細を見る（↓） */}
+          <div style={styles.seeMore}>
+            <span style={styles.seeMoreText}>詳細を見る</span>
+            <span style={styles.chevronDown}>
+              <svg width="20" height="20" viewBox="0 0 24 24">
+                <path
+                  d="M6 9l6 6 6-6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
 
@@ -119,6 +191,11 @@ export default function HeroSection() {
         @media (max-width: 1024px) {
           :global(h1) {
             line-height: 1.15 !important;
+          }
+        }
+        @media (max-width: 800px) {
+          :global(.actions-stack) {
+            flex-direction: column !important;
           }
         }
       `}</style>
@@ -175,7 +252,7 @@ const styles = {
     aspectRatio: "1 / 1",
     borderRadius: "50%",
     backgroundImage:
-      // ここを public/earth-hero.jpg などに差し替え可能
+      // ここを public/earth-hero.jpg に差し替え可（先頭に url を追加）
       "radial-gradient(closest-side, rgba(0,0,0,0) 68%, rgba(0,0,0,.45) 72%, rgba(0,0,0,.8) 100%), radial-gradient(100% 100% at 30% 25%, rgba(34,255,136,.35) 0%, rgba(34,255,136,0) 55%)",
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -248,13 +325,13 @@ const styles = {
     minHeight: "calc(100vh - 72px)",
     display: "grid",
     alignItems: "center",
-    padding: "24px 28px 64px",
+    padding: "24px 28px 86px",
   },
   heroBlock: {
     maxWidth: 980,
     margin: "0 auto",
     transition: "300ms ease",
-    textAlign: "left",
+    textAlign: "center", // ★ 全て中央寄せ
   },
   title: {
     fontSize: "clamp(36px, 6.6vw, 86px)",
@@ -289,6 +366,8 @@ const styles = {
     borderRadius: 14,
     padding: "22px 26px",
     maxWidth: 860,
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   explainText: {
     fontSize: "clamp(14px, 1.7vw, 18px)",
@@ -304,6 +383,8 @@ const styles = {
     gap: 18,
     marginTop: 26,
     maxWidth: 780,
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   metricBox: {
     background: "rgba(0,0,0,.55)",
@@ -330,6 +411,83 @@ const styles = {
     fontSize: "0.95em",
   },
 
-  /* レスポンシブ */
-  "@media (maxWidth: 900px)": {},
+  /* Version バッジ */
+  versionWrap: {
+    marginTop: 22,
+  },
+  versionBadge: {
+    display: "inline-flex",
+    alignItems: "center",
+    padding: "10px 16px",
+    borderRadius: 10,
+    background: "rgba(0, 255, 140, 0.12)",
+    color: "#bfffe2",
+    border: "1px solid rgba(0, 255, 140, 0.4)",
+    fontSize: 14,
+    letterSpacing: 0.4,
+    boxShadow: "0 10px 30px rgba(0,255,140,.12)",
+  },
+
+  /* 3ボタン */
+  actionRow: {
+    display: "flex",
+    gap: 12,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 18,
+    flexWrap: "wrap",
+  },
+  actionBtn: {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 10,
+    padding: "12px 18px",
+    borderRadius: 10,
+    background: "rgba(255,255,255,0.04)",
+    border: "1px solid rgba(200,255,230,0.18)",
+    color: "#eafff4",
+    fontSize: 14,
+    cursor: "pointer",
+    backdropFilter: "blur(2px)",
+  },
+  primaryBtn: {
+    background: "rgba(0,255,140,0.12)",
+    border: "1px solid rgba(0,255,140,0.45)",
+    color: "#ccffe9",
+  },
+  btnIconCircle: {
+    width: 22,
+    height: 22,
+    borderRadius: "50%",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: "rgba(0,255,140,0.18)",
+    color: "#baffdf",
+  },
+
+  /* 詳細を見る */
+  seeMore: {
+    marginTop: 14,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 6,
+  },
+  seeMoreText: {
+    color: "#a7e8cc",
+    fontSize: 13,
+    letterSpacing: 1.4,
+  },
+  chevronDown: {
+    color: "#b4ffd9",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 22,
+    height: 22,
+    borderRadius: "50%",
+    border: "1px solid rgba(180,255,220,.35)",
+    background: "rgba(255,255,255,0.03)",
+  },
 };
