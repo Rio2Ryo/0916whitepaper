@@ -5,9 +5,7 @@ import Image from 'next/image'
 export default function Hero() {
   const scrollToDetails = () => {
     const element = document.getElementById('project-overview')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' })
   }
 
   const downloadWhitepaper = () => {
@@ -31,6 +29,7 @@ export default function Hero() {
           priority
         />
         <div className="bg-overlay" />
+        <div className="bg-vignette" />
       </div>
 
       {/* Content */}
@@ -39,7 +38,7 @@ export default function Hero() {
         <h1 className="title">
           <span className="title-accent">MOTHER VEGETABLES</span>
           <br />
-          <span className="title-sub">PROJECT</span>
+          <span className="title-accent thin">PROJECT</span>
         </h1>
 
         {/* Subtitle */}
@@ -47,12 +46,19 @@ export default function Hero() {
           <p className="lead-1">地球最初の生命体による</p>
           <p className="lead-2">地球再生プロジェクト</p>
 
-          <div className="desc">
-            <p>35億年前の地球最初の生命体「マザーベジタブル」を世界各地に展開することで、</p>
-            <p>CO₂を削減しながら人類と生物の健康を向上させる、</p>
+          {/* Intro (glass card) */}
+          <div className="intro-box">
+            <p>
+              <span className="hl">35億年前</span>
+              の地球最初の生命体「<span className="hl">マザーベジタブル</span>」を世界各地に展開することで、
+            </p>
+            <p>
+              <span className="hl">CO₂を削減</span>
+              しながら<span className="hl">人類と生物の健康を向上</span>させる、
+            </p>
             <p>
               作れば作るほど地球を良くしていく
-              <span className="desc-accent">循環型システム</span>
+              <span className="hl strong">循環型システム</span>
             </p>
           </div>
         </div>
@@ -86,54 +92,51 @@ export default function Hero() {
 
         {/* Version Badge */}
         <div className="version">
-          <span className="version-badge">✨ Version 1.0.0 - 革命的環境技術</span>
+          <span className="version-badge">↻ Version 1.0.0 - 革命的環境技術</span>
         </div>
 
         {/* Action Buttons */}
         <div className="actions">
-          <button onClick={scrollToDetails} className="btn btn-emerald">
-            ▶ プロジェクト詳細を見る
+          <button onClick={scrollToDetails} className="btn btn-primary">
+            <span className="btn-ico">▶</span> プロジェクト詳細を見る
           </button>
           <button
             onClick={() => document.getElementById('token')?.scrollIntoView({ behavior: 'smooth' })}
-            className="btn btn-orange"
+            className="btn btn-outline"
           >
-            🪙 トークン情報
+            <span className="btn-ico">🪙</span> トークン情報
           </button>
-          <button onClick={downloadWhitepaper} className="btn btn-cyan">
-            📄 ホワイトペーパー
+          <button onClick={downloadWhitepaper} className="btn btn-outline">
+            <span className="btn-ico">⭳</span> ホワイトペーパー
           </button>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="scroll-indicator">
-          <div className="scroll-inner">
-            <p className="scroll-text">詳細を見る</p>
-            <div className="bounce">
-              <svg className="scroll-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </div>
-          </div>
-        </div>
+        {/* Scroll Indicator (link-like, green) */}
+        <button className="see-more" onClick={scrollToDetails} aria-label="詳細を見る">
+          詳細を見る
+          <svg className="see-more-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v14m0 0l-7-7m7 7l7-7" />
+          </svg>
+        </button>
       </div>
 
       {/* === Styles (single-file) === */}
       <style jsx>{`
+        /* ===== Colors from screenshot ===== */
         :root {
-          --emerald-400: #34d399;
-          --emerald-500: #10b981;
-          --emerald-600: #059669;
-          --cyan-500: #06b6d4;
-          --cyan-600: #0891b2;
-          --orange-500: #f97316;
-          --orange-600: #ea580c;
-          --gray-200: #e5e7eb;
-          --gray-300: #d1d5db;
-          --white: #ffffff;
-          --black: #000000;
+          --green: #22c55e;       /* メインのネオングリーン */
+          --green-strong: #16a34a;
+          --green-soft: #34d399;
+          --bg-deep: #04150e;     /* かなり暗い深緑〜黒 */
+          --text: #eaf7ee;        /* 白に近い淡い緑がかった白 */
+          --text-dim: #cfe4d6;    /* サブ */
+          --card-border: rgba(52, 211, 153, 0.35);
+          --card-bg: rgba(4, 21, 14, 0.55);
+          --glass-bg: rgba(4, 21, 14, 0.6);
+          --overlay: rgba(0, 0, 0, 0.6);
         }
 
+        /* ===== Layout base ===== */
         .hero {
           position: relative;
           min-height: 100vh;
@@ -141,13 +144,8 @@ export default function Hero() {
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          z-index: 0;
-          padding-top: 5rem; /* ≒ pt-20 */
-        }
-        @media (min-width: 768px) {
-          .hero {
-            padding-top: 6rem; /* ≒ md:pt-24 */
-          }
+          background: var(--bg-deep);
+          padding-top: 6.5rem; /* ヘッダー分 + 余白 */
         }
 
         .bg-wrap {
@@ -158,285 +156,193 @@ export default function Hero() {
         .bg-overlay {
           position: absolute;
           inset: 0;
-          background: rgba(0, 0, 0, 0.5);
+          background: var(--overlay); /* 背景をしっかり暗く */
+        }
+        .bg-vignette {
+          position: absolute;
+          inset: -10%;
+          background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.12), transparent 60%),
+            radial-gradient(ellipse at bottom right, rgba(34, 197, 94, 0.18), transparent 45%);
+          mix-blend-mode: screen;
         }
 
         .content {
           position: relative;
           text-align: center;
-          padding-left: 1rem;
-          padding-right: 1rem;
-          max-width: 72rem; /* ≒ max-w-6xl */
-          margin: 2rem auto 0;
-          z-index: 10;
-        }
-        @media (min-width: 768px) {
-          .content {
-            margin-top: 3rem; /* ≒ md:mt-12 */
-          }
+          padding: 0 1.25rem;
+          max-width: 1200px;
+          margin: 0 auto;
+          color: var(--text);
         }
 
+        /* ===== Title ===== */
         .title {
-          color: var(--white);
-          font-weight: 700;
-          margin-bottom: 1.5rem;
-          font-size: 2.25rem; /* text-4xl */
-          line-height: 1.15;
+          margin: 0 0 1.5rem 0;
+          line-height: 1.1;
+          letter-spacing: 0.02em;
         }
-        @media (min-width: 640px) {
-          .title {
-            font-size: 3rem; /* sm:text-5xl */
-          }
-        }
-        @media (min-width: 768px) {
-          .title {
-            font-size: 3.75rem; /* md:text-6xl */
-            margin-bottom: 2rem;
-          }
-        }
-        @media (min-width: 1024px) {
-          .title {
-            font-size: 4.5rem; /* lg:text-7xl */
-          }
-        }
-        @media (min-width: 1280px) {
-          .title {
-            font-size: 6rem; /* xl:text-8xl */
-          }
-        }
-
         .title-accent {
-          color: var(--emerald-400);
+          color: var(--green);
+          text-shadow: 0 0 18px rgba(34, 197, 94, 0.35);
+          font-weight: 800;
+          font-size: clamp(40px, 6.5vw, 90px);
         }
-        .title-sub {
-          color: var(--white);
-          font-weight: 700;
-          font-size: 1.5rem; /* 2xl */
-        }
-        @media (min-width: 640px) {
-          .title-sub {
-            font-size: 1.875rem; /* 3xl */
-          }
-        }
-        @media (min-width: 768px) {
-          .title-sub {
-            font-size: 2.25rem; /* 4xl */
-          }
-        }
-        @media (min-width: 1024px) {
-          .title-sub {
-            font-size: 3rem; /* 5xl */
-          }
-        }
-        @media (min-width: 1280px) {
-          .title-sub {
-            font-size: 3.75rem; /* 6xl */
-          }
+        .title .thin {
+          font-weight: 750;
         }
 
+        /* ===== Subtitle and intro ===== */
         .subtitle {
-          margin-bottom: 3rem;
+          margin-top: 0.5rem;
         }
         .lead-1 {
-          color: var(--white);
-          font-size: 1.25rem;
-          margin-bottom: 1rem;
-        }
-        @media (min-width: 768px) {
-          .lead-1 {
-            font-size: 1.5rem;
-          }
+          color: var(--text);
+          font-size: clamp(16px, 2vw, 22px);
+          opacity: 0.92;
+          margin: 0.5rem 0 0.25rem;
         }
         .lead-2 {
-          color: var(--emerald-400);
-          font-weight: 700;
-          font-size: 1.5rem;
-          margin-bottom: 2rem;
-        }
-        @media (min-width: 768px) {
-          .lead-2 {
-            font-size: 1.875rem;
-          }
+          color: var(--green);
+          font-weight: 800;
+          font-size: clamp(22px, 2.6vw, 32px);
+          margin: 0.25rem 0 1.25rem;
+          text-shadow: 0 0 12px rgba(34, 197, 94, 0.35);
         }
 
-        .desc {
-          max-width: 56rem;
-          margin: 0 auto;
-          display: grid;
-          gap: 1rem;
-          color: #e5e7eb; /* gray-200-ish */
-          font-size: 1rem;
+        .intro-box {
+          margin: 0 auto 1.5rem;
+          max-width: 900px;
+          background: var(--glass-bg);
+          border: 1px solid var(--card-border);
+          border-radius: 18px;
+          padding: 18px 22px;
+          box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+          backdrop-filter: blur(6px);
+          color: var(--text);
+          line-height: 1.85;
+          font-size: clamp(14px, 1.6vw, 18px);
         }
-        @media (min-width: 640px) {
-          .desc {
-            font-size: 1.125rem;
-          }
+        .intro-box p {
+          margin: 0.35rem 0;
         }
-        @media (min-width: 768px) {
-          .desc {
-            font-size: 1.25rem;
-          }
+        .hl {
+          color: var(--green);
         }
-        .desc-accent {
-          color: var(--emerald-400);
-          font-weight: 700;
-          margin-left: 0.25rem;
+        .hl.strong {
+          font-weight: 800;
         }
 
+        /* ===== Stats ===== */
         .stats {
+          margin: 1.25rem auto 1.75rem;
           display: grid;
           grid-template-columns: 1fr;
-          gap: 1rem;
-          margin-bottom: 3rem;
+          gap: 14px;
+          max-width: 980px;
         }
         @media (min-width: 640px) {
-          .stats {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-          }
+          .stats { grid-template-columns: repeat(2, 1fr); }
         }
-        @media (min-width: 768px) {
-          .stats {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-          }
+        @media (min-width: 900px) {
+          .stats { grid-template-columns: repeat(3, 1fr); }
         }
-
         .stat-card {
-          background: rgba(0, 0, 0, 0.4);
-          backdrop-filter: blur(8px);
-          border: 1px solid rgba(16, 185, 129, 0.3); /* emerald-500/30 */
-          border-radius: 0.5rem;
-          padding: 1rem;
-        }
-        @media (min-width: 640px) {
-          .stat-card {
-            padding: 1.25rem;
-          }
-        }
-        @media (min-width: 768px) {
-          .stat-card {
-            padding: 1.5rem;
-          }
+          background: var(--card-bg);
+          border: 1px solid var(--card-border);
+          border-radius: 16px;
+          padding: 22px 24px;
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+          text-align: left;
         }
         .stat-number {
-          color: var(--emerald-400);
-          font-weight: 700;
-          margin-bottom: 0.5rem;
-          font-size: 1.875rem; /* 3xl */
+          color: var(--green);
+          font-weight: 800;
+          font-size: clamp(28px, 3.2vw, 44px);
+          margin-bottom: 6px;
+          text-shadow: 0 0 10px rgba(34, 197, 94, 0.25);
         }
-        @media (min-width: 640px) {
-          .stat-number {
-            font-size: 2.25rem; /* 4xl */
-          }
-        }
-        @media (min-width: 768px) {
-          .stat-number {
-            font-size: 3rem; /* 5xl */
-          }
-        }
-        .stat-labels {
-          color: var(--white);
-        }
-        .stat-title {
-          font-weight: 600;
-        }
-        .stat-sub {
-          color: #d1d5db;
-          font-size: 0.875rem;
-        }
+        .stat-labels { color: var(--text); }
+        .stat-title { font-weight: 650; }
+        .stat-sub { color: var(--text-dim); font-size: 13px; margin-top: 2px; }
 
-        .version {
-          margin-bottom: 2rem;
-        }
+        /* ===== Version Badge ===== */
+        .version { margin: 10px 0 16px; }
         .version-badge {
           display: inline-block;
-          background: rgba(16, 185, 129, 0.2);
-          border: 1px solid rgba(16, 185, 129, 0.5);
-          color: var(--emerald-400);
-          padding: 0.5rem 1rem;
+          padding: 10px 16px;
           border-radius: 999px;
-          font-size: 0.875rem;
+          background: rgba(6, 30, 18, 0.7);
+          border: 1px solid var(--card-border);
+          color: var(--text);
+          font-size: 14px;
         }
+        .version-badge::before { filter: saturate(120%); }
 
+        /* ===== Buttons ===== */
         .actions {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 12px;
           justify-content: center;
           align-items: center;
+          margin-top: 8px;
         }
-        @media (min-width: 640px) {
-          .actions {
-            flex-direction: row;
-          }
+        @media (min-width: 700px) {
+          .actions { flex-direction: row; }
         }
         .btn {
-          color: var(--white);
-          padding: 0.75rem 2rem;
-          border-radius: 0.5rem;
-          font-weight: 600;
-          transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.2s ease;
-          box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-          will-change: transform;
-          border: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 12px 22px;
+          border-radius: 12px;
+          font-weight: 700;
+          font-size: 15px;
           cursor: pointer;
+          transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+          user-select: none;
         }
-        .btn:hover {
-          transform: scale(1.05);
-          box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+        .btn-ico { font-size: 16px; line-height: 1; }
+        .btn-primary {
+          background: var(--green);
+          color: #032110;
+          border: 1px solid var(--green);
         }
-        .btn-emerald {
-          background: var(--emerald-500);
+        .btn-primary:hover {
+          transform: translateY(-1px);
+          background: var(--green-strong);
+          border-color: var(--green-strong);
+          box-shadow: 0 14px 28px rgba(34, 197, 94, 0.25);
         }
-        .btn-emerald:hover {
-          background: var(--emerald-600);
+        .btn-outline {
+          background: rgba(3, 17, 12, 0.7);
+          color: var(--text);
+          border: 1px solid var(--card-border);
         }
-        .btn-orange {
-          background: var(--orange-500);
-        }
-        .btn-orange:hover {
-          background: var(--orange-600);
-        }
-        .btn-cyan {
-          background: var(--cyan-500);
-        }
-        .btn-cyan:hover {
-          background: var(--cyan-600);
+        .btn-outline:hover {
+          transform: translateY(-1px);
+          border-color: var(--green);
+          box-shadow: 0 14px 28px rgba(34, 197, 94, 0.22);
         }
 
-        .scroll-indicator {
-          position: absolute;
-          left: 50%;
-          bottom: 2rem;
-          transform: translateX(-50%);
-          z-index: 10;
+        /* ===== See more (bottom link) ===== */
+        .see-more {
+          margin: 14px auto 6px;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: transparent;
+          border: none;
+          color: var(--green);
+          font-size: 14px;
+          cursor: pointer;
+          padding: 8px 12px;
+          opacity: 0.95;
         }
-        .scroll-inner {
-          color: var(--white);
-          text-align: center;
-        }
-        .scroll-text {
-          font-size: 0.875rem;
-          margin-bottom: 0.5rem;
-        }
-        .scroll-icon {
-          width: 1.5rem;
-          height: 1.5rem;
-          display: block;
-          margin: 0 auto;
-        }
-        .bounce {
-          animation: bounce 1.5s infinite;
-        }
-        @keyframes bounce {
-          0%, 100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-6px);
-          }
-        }
+        .see-more:hover { opacity: 1; text-shadow: 0 0 10px rgba(34, 197, 94, 0.35); }
+        .see-more-ico { width: 16px; height: 16px; }
+
       `}</style>
     </section>
   )
