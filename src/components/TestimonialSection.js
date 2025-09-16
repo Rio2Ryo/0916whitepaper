@@ -65,6 +65,13 @@ export default function TestimonialSection() {
           ))}
         </div>
       </div>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
@@ -99,7 +106,7 @@ const s = {
   },
   grid: {
     display: "grid",
-    gridTemplateColumns: "1fr",
+    gridTemplateColumns: "repeat(2, 1fr)", // 2列
     gap: "2rem"
   },
   card: {

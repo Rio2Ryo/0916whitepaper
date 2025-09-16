@@ -225,9 +225,9 @@ export default function Home() {
         </div>*/}
          <HeroSection />
          <ConceptSection />
-         <FeatureSection />
          <Effects />
          <TestimonialSection />
+         <FeatureSection />
          <ProductSection />
          <GuaranteeSection />
          <FAQSection />
