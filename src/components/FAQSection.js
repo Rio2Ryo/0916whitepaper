@@ -257,12 +257,13 @@ export default function TokenSection() {
 
       {/* ===== Styles ===== */}
       <style jsx>{`
+        /* === COLOR & FONT VARIABLES === */
         :root {
-          --black: #0c0a13;
-          --ink: #e6edf3;
-          --ink-dim: #9fb0c9;
-          --panel: #13111b;
-          --border: rgba(255, 255, 255, 0.08);
+          --black: #000000;
+          --panel: #141414;
+          --ink: #ffffff;
+          --ink-dim: #a0a0a0;
+          --border: rgba(255, 255, 255, 0.12);
           --radius-lg: 16px;
           --radius-md: 12px;
           --yellow: #f5c82e;
@@ -272,15 +273,20 @@ export default function TokenSection() {
           --blue: #4f96ee;
           --red: #f36653;
         }
+
+        /* === BASE STYLES === */
         .token {
           background: var(--black);
           padding: 80px 16px;
+          font-family: sans-serif;
         }
         .container {
           max-width: 900px;
           margin: 0 auto;
           color: var(--ink);
         }
+
+        /* === HEADINGS === */
         .label {
           display: block;
           text-align: center;
@@ -301,6 +307,7 @@ export default function TokenSection() {
           font-size: clamp(32px, 5vw, 44px);
           line-height: 1.2;
           margin: 8px 0 32px;
+          color: var(--ink);
         }
         .subttl {
           color: var(--yellow);
@@ -311,7 +318,26 @@ export default function TokenSection() {
           font-size: 22px;
           text-shadow: 0 0 18px rgba(245, 200, 46, 0.3);
         }
+        .sec-ttl {
+          text-align: center;
+          font-weight: 700;
+          font-size: 22px;
+          margin: 64px 0 16px;
+        }
+        .sec-ttl.red {
+          color: var(--red);
+          text-shadow: 0 0 18px rgba(243, 102, 83, 0.3);
+        }
+        .sec-ttl.purple {
+          color: var(--violet);
+          text-shadow: 0 0 18px rgba(169, 138, 255, 0.3);
+        }
+        .sec-ttl.cyan {
+          color: var(--cyan);
+          text-shadow: 0 0 18px rgba(57, 214, 229, 0.3);
+        }
 
+        /* === PANELS & CARDS === */
         .panel {
           background: var(--panel);
           border: 1px solid var(--border);
@@ -321,18 +347,20 @@ export default function TokenSection() {
         .panel-lg {
           margin-bottom: 32px;
         }
-        .panel-lead {
-          color: var(--ink);
-          opacity: 0.9;
-          line-height: 1.9;
-          margin: 0 0 20px;
+        .card {
+          background: var(--panel);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          padding: 24px 28px;
         }
-        .panel-txt {
-          color: var(--ink-dim);
-          line-height: 1.9;
-          margin: 0;
+        .mini-card {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-md);
+          padding: 18px 20px;
         }
 
+        /* === GRID LAYOUTS === */
         .triple {
           display: grid;
           grid-template-columns: 1fr;
@@ -343,26 +371,6 @@ export default function TokenSection() {
             grid-template-columns: repeat(3, 1fr);
           }
         }
-        .mini-card {
-          background: rgba(0, 0, 0, 0.15);
-          border: 1px solid var(--border);
-          border-radius: var(--radius-md);
-          padding: 18px 20px;
-        }
-        .mini-badge.yellow {
-          color: var(--yellow);
-          font-weight: 700;
-          font-size: 15px;
-          padding: 0;
-          margin-bottom: 10px;
-        }
-        .mini-text {
-          color: var(--ink-dim);
-          font-size: 14px;
-          line-height: 1.8;
-          margin: 0;
-        }
-
         .grid.two {
           display: grid;
           grid-template-columns: 1fr;
@@ -375,15 +383,28 @@ export default function TokenSection() {
           }
         }
 
-        .card {
-          background: var(--panel);
-          border: 1px solid var(--border);
-          border-radius: var(--radius-lg);
-          padding: 24px 28px;
+        /* === TEXT & CONTENT === */
+        .panel-lead {
+          color: var(--ink);
+          line-height: 1.9;
+          margin: 0 0 20px;
         }
-        .card-green {
-          background: rgba(39, 193, 141, 0.07);
-          border-color: rgba(39, 193, 141, 0.2);
+        .panel-txt {
+          color: var(--ink-dim);
+          line-height: 1.9;
+          margin: 0;
+        }
+        .mini-badge.yellow {
+          color: var(--yellow);
+          font-weight: 700;
+          font-size: 15px;
+          margin-bottom: 10px;
+        }
+        .mini-text {
+          color: var(--ink-dim);
+          font-size: 14px;
+          line-height: 1.8;
+          margin: 0;
         }
         .card-ttl {
           font-weight: 700;
@@ -391,7 +412,26 @@ export default function TokenSection() {
           margin-bottom: 18px;
           display: flex;
           align-items: center;
+          color: var(--ink);
         }
+        .accent {
+          color: var(--yellow);
+          font-weight: bold;
+        }
+        .accent-blue {
+          color: var(--blue);
+          font-weight: bold;
+        }
+        .note {
+          color: var(--ink-dim);
+          font-size: 13px;
+          margin-top: 24px;
+          line-height: 1.7;
+          border-top: 1px solid var(--border);
+          padding-top: 16px;
+        }
+        
+        /* === BASIC INFO CARD === */
         .coin {
           display: inline-grid;
           place-items: center;
@@ -399,12 +439,11 @@ export default function TokenSection() {
           height: 32px;
           margin-right: 10px;
           background: var(--yellow);
-          color: var(--black);
+          color: #000000;
           border-radius: 50%;
           font-weight: 700;
           font-size: 16px;
         }
-
         .info .row {
           display: flex;
           justify-content: space-between;
@@ -423,15 +462,12 @@ export default function TokenSection() {
           color: var(--ink);
           font-weight: 500;
         }
-        .accent {
-          color: var(--yellow);
-          font-weight: bold;
+        
+        /* === BENEFITS CARD === */
+        .card-green {
+          background: rgba(39, 193, 141, 0.07);
+          border-color: rgba(39, 193, 141, 0.2);
         }
-        .accent-blue {
-          color: var(--blue);
-          font-weight: bold;
-        }
-
         .benefits {
           list-style: none;
           margin: 0;
@@ -468,7 +504,8 @@ export default function TokenSection() {
           margin-top: 7px;
           box-shadow: 0 0 12px rgba(39, 193, 141, 0.7);
         }
-
+        
+        /* === ALLOCATION BARS === */
         .bar-row {
           display: grid;
           grid-template-columns: 140px 1fr 50px;
@@ -482,57 +519,32 @@ export default function TokenSection() {
         }
         .bar {
           height: 8px;
-          background: #252330;
+          background: #333333;
           border-radius: 999px;
           overflow: hidden;
         }
         .bar span {
           display: block;
           height: 100%;
-          background: linear-gradient(90deg, #8194b1, #d4dbe7);
+          background: #cccccc;
         }
         .bar span.bar-fill-blue {
-          background: linear-gradient(90deg, #4f96ee, #8ec1ff);
+          background: var(--blue);
         }
         .bar-v {
           text-align: right;
           color: var(--ink-dim);
           font-weight: 500;
         }
-        .note {
-          color: var(--ink-dim);
-          font-size: 13px;
-          margin-top: 24px;
-          line-height: 1.7;
-          border-top: 1px solid var(--border);
-          padding-top: 16px;
-        }
-
-        .sec-ttl {
-          text-align: center;
-          font-weight: 700;
-          font-size: 22px;
-          margin: 64px 0 16px;
-        }
-        .sec-ttl.red {
-          color: var(--red);
-          text-shadow: 0 0 18px rgba(243, 102, 83, 0.3);
-        }
-        .sec-ttl.purple {
-          color: var(--violet);
-          text-shadow: 0 0 18px rgba(169, 138, 255, 0.3);
-        }
-        .sec-ttl.cyan {
-          color: var(--cyan);
-          text-shadow: 0 0 18px rgba(57, 214, 229, 0.3);
-        }
-
+        
+        /* === LOCKUP CARD === */
         .lock-ttl {
           color: var(--red);
           font-weight: 700;
           margin-bottom: 8px;
         }
 
+        /* === ECOSYSTEM FLOW === */
         .flow.card {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -558,36 +570,37 @@ export default function TokenSection() {
           color: white;
         }
         .ico.gold {
-          background: #4a3811;
+          background: rgba(164, 131, 51, 0.2);
           border: 1px solid #a48333;
         }
         .ico.green {
-          background: #123d2f;
+          background: rgba(39, 193, 141, 0.2);
           border: 1px solid #27c18d;
         }
         .ico.blue {
-          background: #18304e;
+          background: rgba(79, 150, 238, 0.2);
           border: 1px solid #4f96ee;
         }
         .ico.violet {
-          background: #36295f;
+          background: rgba(169, 138, 255, 0.2);
           border: 1px solid #a98aff;
         }
         .step-ttl {
           font-weight: 700;
           margin-bottom: 4px;
+          color: var(--ink);
         }
         .step-txt {
           color: var(--ink-dim);
           font-size: 14px;
         }
 
+        /* === ROADMAP === */
         .road.card {
           display: flex;
           flex-direction: column;
           gap: 1px;
           padding: 24px;
-          background-color: var(--panel);
         }
         .q {
           display: flex;
