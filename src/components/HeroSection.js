@@ -20,11 +20,17 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      {/* ===== 固定ヘッダー ===== */}
+      {/* ===== 固定ヘッダー（左は画像ロゴ） ===== */}
       <header className="site-header">
         <div className="nav-inner">
-          <Link href="/" className="brand">
-            MOTHER<br />VEGETABLES
+          <Link href="/" className="brand-logo" aria-label="MOTHER VEGETABLES Home">
+            <Image
+              src="/logo-uCgt3dQl.png"
+              alt="MOTHER VEGETABLES"
+              width={146}         // ロゴの視認性を確保（ヘッダー64pxに収まる）
+              height={28}
+              priority
+            />
           </Link>
           <nav className="nav">
             <a href="#team">メンバー</a>
@@ -56,13 +62,14 @@ export default function Hero() {
           <br />
           <span className="title-accent thin">PROJECT</span>
         </h1>
+        <div class="bar"></div>
 
         {/* Subtitle */}
         <div className="subtitle">
           <p className="lead-1">地球最初の生命体による</p>
           <p className="lead-2">地球再生プロジェクト</p>
 
-          {/* Intro glass card */}
+        {/* Intro glass card */}
           <div className="intro-box">
             <p>
               <span className="hl">35億年前</span>
@@ -151,12 +158,14 @@ export default function Hero() {
           display: flex; align-items: center; justify-content: space-between;
           padding: 0 18px;
         }
-        .brand{ color: #21d679; text-decoration: none; font-weight: 900; line-height: 1; letter-spacing: .02em; }
+        .brand-logo{
+          display: inline-flex; align-items: center; height: 28px; /* ロゴ高さ */
+        }
         .nav{ display: flex; gap: 22px; }
         .nav a{ color: #f4f9f6; text-decoration: none; font-size: 14px; opacity: .92; }
         .nav a:hover{ opacity: 1; text-shadow: 0 0 6px rgba(33,214,121,.35); }
 
-        /* ===== カラーパレット（参考：すべてHEXでテキスト指定、背景は必要箇所のみrgba） ===== */
+        /* ===== テキストのカラー（HEX直指定） ===== */
         .title-accent { color: #05df72; }
         .lead-1 { color: #ffffff; }
         .lead-2 { color: #24e570; }
@@ -178,6 +187,9 @@ export default function Hero() {
           background: #000000;
           padding-top: 6.2rem;
         }
+        .bar{
+        width:130px;height:2px;background-color:#05df72;margin:0 auto 30px auto;
+        }
         .bg-wrap { position: absolute; inset: 0; z-index: -1; }
         .bg-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.92); }
         .bg-vignette {
@@ -191,7 +203,7 @@ export default function Hero() {
         .content { position: relative; text-align: center; padding: 0 20px; max-width: 1200px; margin: 0 auto; }
 
         /* ===== タイトル ===== */
-        .title { margin: 0 0 20px 0; line-height: 1.06; letter-spacing: .02em; }
+        .title { font-size: 4rem; margin: 90px auto 30px auto; line-height: 1.06; letter-spacing: .02em; }
         .title .thin { font-weight: 760; }
 
         /* ===== サブタイトル＋イントロカード ===== */
@@ -256,11 +268,11 @@ export default function Hero() {
         }
         .btn-ico { font-size: 16px; line-height: 1; }
 
-        /* 左：ソリッド緑（白文字に見える濃いテキスト色で再現） */
+        /* 左：ソリッド緑（白に近いテキスト色） */
         .btn-primary {
-          background: #16a34a;                        /* ソリッド緑 */
+          background: #16a34a;
           border: 1px solid #16a34a;
-          color: #eafff2;                             /* 文字 #eafff2 */
+          color: #eafff2;
           box-shadow: 0 16px 28px rgba(22,163,74,0.28), inset 0 0 0 1px rgba(255,255,255,0.04);
         }
         .btn-primary:hover {
@@ -273,8 +285,8 @@ export default function Hero() {
         /* 右２つ：ダーク背景＋細い緑枠＋緑文字 */
         .btn-outline {
           background: #0b1410;
-          border: 1px solid #1b7c4d;                  /* 細めの緑枠 */
-          color: #66e5a0;                              /* 緑文字 */
+          border: 1px solid #1b7c4d;
+          color: #66e5a0;
           box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
         }
         .btn-outline:hover {
@@ -293,13 +305,6 @@ export default function Hero() {
         }
         .see-more:hover { text-shadow: 0 0 10px rgba(35,211,111,0.34); }
         .see-more-ico { width: 16px; height: 16px; }
-
-        /* ===== 細かいテキストサイズ ===== */
-        .lead-1 { font-size: clamp(18px, 2.2vw, 22px); opacity: .95; margin: 8px 0 4px; }
-        .lead-2 {
-          font-size: clamp(26px, 3vw, 34px); margin: 2px 0 18px;
-          color: #24e570; font-weight: 800; text-shadow: 0 0 12px rgba(35,211,111,0.34);
-        }
       `}</style>
     </section>
   )
