@@ -27,7 +27,7 @@ export default function Hero() {
             <Image
               src="/logo-uCgt3dQl.png"
               alt="MOTHER VEGETABLES"
-              width={146}         // ロゴの視認性を確保（ヘッダー64pxに収まる）
+              width={146}
               height={28}
               priority
             />
@@ -41,35 +41,36 @@ export default function Hero() {
         </div>
       </header>
 
-      {/* Background */}
+      {/* ===== 背景：暗い大きい地球（必ず表示） ===== */}
       <div className="bg-wrap">
         <Image
           src="/Gemini_Generated_Image_cu7xrscu7xrscu7x.png"
           alt="Earth Regeneration"
           fill
-          style={{ objectFit: 'cover' }}
           priority
+          sizes="100vw"
+          style={{ objectFit: 'cover', objectPosition: 'center 35%' }} /* 顔を少し上に */
         />
+        {/* 視認性を確保する暗幕（少し薄め） */}
         <div className="bg-overlay" />
+        {/* うっすら緑グロー */}
         <div className="bg-vignette" />
       </div>
 
-      {/* Content */}
+      {/* ===== コンテンツ ===== */}
       <div className="content">
-        {/* Title */}
         <h1 className="title">
           <span className="title-accent">MOTHER VEGETABLES</span>
           <br />
           <span className="title-accent thin">PROJECT</span>
         </h1>
-        <div class="bar"></div>
+        <div className="bar" />
 
-        {/* Subtitle */}
         <div className="subtitle">
           <p className="lead-1">地球最初の生命体による</p>
           <p className="lead-2">地球再生プロジェクト</p>
 
-        {/* Intro glass card */}
+          {/* Intro glass card */}
           <div className="intro-box">
             <p>
               <span className="hl">35億年前</span>
@@ -143,9 +144,9 @@ export default function Hero() {
         </button>
       </div>
 
-      {/* Styles */}
+      {/* ===== Styles ===== */}
       <style jsx>{`
-        /* ===== 固定ヘッダー ===== */
+        /* ヘッダー */
         .site-header{
           position: fixed; top: 0; left: 0; right: 0; height: 64px;
           background: rgba(0,0,0,0.92);
@@ -158,14 +159,12 @@ export default function Hero() {
           display: flex; align-items: center; justify-content: space-between;
           padding: 0 18px;
         }
-        .brand-logo{
-          display: inline-flex; align-items: center; height: 28px; /* ロゴ高さ */
-        }
+        .brand-logo{ display: inline-flex; align-items: center; height: 28px; }
         .nav{ display: flex; gap: 22px; }
         .nav a{ color: #f4f9f6; text-decoration: none; font-size: 14px; opacity: .92; }
         .nav a:hover{ opacity: 1; text-shadow: 0 0 6px rgba(33,214,121,.35); }
 
-        /* ===== テキストのカラー（HEX直指定） ===== */
+        /* テキスト色（HEX直指定） */
         .title-accent { color: #05df72; }
         .lead-1 { color: #ffffff; }
         .lead-2 { color: #24e570; }
@@ -176,133 +175,89 @@ export default function Hero() {
         .version-badge { color: #22e06f; }
         .see-more { color: #23d36f; }
 
-        /* ===== ヒーロー土台 ===== */
+        /* 土台 */
         .hero {
           position: relative;
           min-height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          background: #000000;
-          padding-top: 6.2rem;
+          display: flex; align-items: center; justify-content: center;
+          overflow: hidden; background: #000000; padding-top: 6.2rem;
         }
-        .bar{
-        width:130px;height:2px;background-color:#05df72;margin:0 auto 30px auto;
-        }
+
+        /* 背景：地球（消えないようにオーバーレイを薄めに） */
         .bg-wrap { position: absolute; inset: 0; z-index: -1; }
-        .bg-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.92); }
+        .bg-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.62); } /* 0.62に調整 */
         .bg-vignette {
           position: absolute; inset: -10%;
           background:
-            radial-gradient(ellipse at 60% 40%, rgba(35, 211, 111, 0.14), transparent 55%),
-            radial-gradient(ellipse at 90% 80%, rgba(35, 211, 111, 0.18), transparent 45%);
+            radial-gradient(ellipse at 60% 40%, rgba(35, 211, 111, 0.12), transparent 55%),
+            radial-gradient(ellipse at 90% 80%, rgba(35, 211, 111, 0.16), transparent 45%);
           mix-blend-mode: screen;
         }
 
         .content { position: relative; text-align: center; padding: 0 20px; max-width: 1200px; margin: 0 auto; }
 
-        /* ===== タイトル ===== */
+        /* タイトル */
         .title { font-size: 4rem; margin: 90px auto 30px auto; line-height: 1.06; letter-spacing: .02em; }
         .title .thin { font-weight: 760; }
+        .bar { width: 130px; height: 2px; background-color: #05df72; margin: 0 auto 30px auto; }
 
-        /* ===== サブタイトル＋イントロカード ===== */
+        /* サブタイトル＋イントロカード */
         .subtitle { margin-top: 6px; }
         .intro-box {
           margin: 0 auto 18px; max-width: 980px;
           background: rgba(6, 24, 14, 0.78);
-          border: 1px solid #146a3f;                  /* 緑みの枠（スクショ寄せ） */
+          border: 1px solid #146a3f;
           border-radius: 18px;
           padding: 22px 28px;
-          box-shadow:
-            0 10px 28px rgba(0,0,0,0.45),
-            inset 0 0 0 1px rgba(35,211,111,0.12);     /* 内側の薄いエッジ */
+          box-shadow: 0 10px 28px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(35,211,111,0.12);
           line-height: 1.9; font-size: clamp(14px, 1.6vw, 18px);
         }
         .hl.strong { font-weight: 800; }
 
-        /* ===== 統計カード（700倍/24/7/8分野） ===== */
+        /* 統計カード */
         .stats { margin: 18px auto 22px; display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 980px; }
         @media (min-width: 720px) { .stats { grid-template-columns: repeat(3, 1fr); } }
 
         .stat-card {
-          background: rgba(6, 24, 14, 0.72);          /* 半透明な深緑 */
-          border: 1px solid #115c37;                  /* はっきり見える緑枠 */
+          background: rgba(6, 24, 14, 0.72);
+          border: 1px solid #115c37;
           border-radius: 16px;
           padding: 28px 30px 22px;
-          box-shadow:
-            0 10px 24px rgba(0,0,0,0.42),
-            0 0 16px rgba(23, 211, 111, 0.1);
+          box-shadow: 0 10px 24px rgba(0,0,0,0.42), 0 0 16px rgba(23, 211, 111, 0.10);
           text-align: left;
         }
-        .stat-number {
-          font-weight: 900;
-          font-size: clamp(28px, 3.2vw, 38px);
-          margin-bottom: 6px;
-          text-shadow: 0 0 10px rgba(35, 211, 111, 0.26);
-        }
-        .stat-labels { color: #e8f3ea; }
+        .stat-number { font-weight: 900; font-size: clamp(28px, 3.2vw, 38px); margin-bottom: 6px; text-shadow: 0 0 10px rgba(35,211,111,0.26); }
         .stat-title { font-weight: 700; color: #e8f3ea; }
         .stat-sub { color: #a8c3b5; font-size: 13px; margin-top: 2px; }
 
-        /* ===== バージョンバッジ ===== */
+        /* バージョンバッジ */
         .version { margin: 12px 0 18px; }
         .version-badge {
           display: inline-block; padding: 10px 16px; border-radius: 999px;
-          background: #0f2c1d;                        /* 深い緑背景 */
-          border: 1px solid #1a7b4b;                  /* 緑枠 */
-          font-size: 14px; color: #22e06f;
+          background: #0f2c1d; border: 1px solid #1a7b4b; font-size: 14px; color: #22e06f;
           box-shadow: 0 8px 22px rgba(0,0,0,0.35);
         }
 
-        /* ===== ボタン行 ===== */
+        /* ボタン */
         .actions { display: flex; flex-direction: column; gap: 12px; justify-content: center; align-items: center; margin-top: 10px; }
         @media (min-width: 760px) { .actions { flex-direction: row; } }
 
         .btn {
           display: inline-flex; align-items: center; gap: 10px;
-          padding: 14px 22px; border-radius: 12px;
-          font-weight: 800; font-size: 15px; cursor: pointer;
+          padding: 14px 22px; border-radius: 12px; font-weight: 800; font-size: 15px; cursor: pointer;
           transition: transform .18s ease, box-shadow .22s ease, background .18s ease, border-color .18s ease;
           user-select: none;
         }
         .btn-ico { font-size: 16px; line-height: 1; }
 
-        /* 左：ソリッド緑（白に近いテキスト色） */
-        .btn-primary {
-          background: #16a34a;
-          border: 1px solid #16a34a;
-          color: #eafff2;
-          box-shadow: 0 16px 28px rgba(22,163,74,0.28), inset 0 0 0 1px rgba(255,255,255,0.04);
-        }
-        .btn-primary:hover {
-          transform: translateY(-1px);
-          background: #139246;
-          border-color: #139246;
-          box-shadow: 0 18px 34px rgba(22,163,74,0.34);
-        }
+        .btn-primary { background: #16a34a; border: 1px solid #16a34a; color: #eafff2; box-shadow: 0 16px 28px rgba(22,163,74,0.28), inset 0 0 0 1px rgba(255,255,255,0.04); }
+        .btn-primary:hover { transform: translateY(-1px); background: #139246; border-color: #139246; box-shadow: 0 18px 34px rgba(22,163,74,0.34); }
 
-        /* 右２つ：ダーク背景＋細い緑枠＋緑文字 */
-        .btn-outline {
-          background: #0b1410;
-          border: 1px solid #1b7c4d;
-          color: #66e5a0;
-          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
-        }
-        .btn-outline:hover {
-          transform: translateY(-1px);
-          border-color: #22c55e;
-          color: #8df2be;
-          box-shadow: 0 14px 26px rgba(34,197,94,0.22);
-        }
+        .btn-outline { background: #0b1410; border: 1px solid #1b7c4d; color: #66e5a0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03); }
+        .btn-outline:hover { transform: translateY(-1px); border-color: #22c55e; color: #8df2be; box-shadow: 0 14px 26px rgba(34,197,94,0.22); }
 
         /* 「詳細を見る」 */
-        .see-more {
-          margin: 16px auto 8px;
-          display: inline-flex; align-items: center; gap: 8px;
-          background: transparent; border: none; font-size: 14px; cursor: pointer; padding: 8px 12px; opacity: .98;
-          color: #23d36f;
-        }
+        .see-more { margin: 16px auto 8px; display: inline-flex; align-items: center; gap: 8px; background: transparent; border: none; font-size: 14px; cursor: pointer; padding: 8px 12px; opacity: .98; color: #23d36f; }
         .see-more:hover { text-shadow: 0 0 10px rgba(35,211,111,0.34); }
         .see-more-ico { width: 16px; height: 16px; }
       `}</style>
