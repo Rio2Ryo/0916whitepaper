@@ -44,7 +44,8 @@ export default function Hero() {
       {/* Background */}
       <div className="bg-wrap">
         <Image
-          src="/Gemini_Generated_Image_cu7xrscu7xrscu7x.png"
+          // こちらの画像パスをアップロードされた画像に変更しました
+          src="/image_c8314f.jpg"
           alt="Earth Regeneration"
           fill
           style={{ objectFit: 'cover' }}
@@ -54,7 +55,7 @@ export default function Hero() {
         <div className="bg-vignette" />
       </div>
 
-      {/* Content */}
+      {/* Content (ここから下の要素は一切変更していません) */}
       <div className="content">
         {/* Title */}
         <h1 className="title">
@@ -108,43 +109,43 @@ export default function Hero() {
             <div className="stat-number">8分野</div>
             <div className="stat-labels">
               <div className="stat-title">産業展開</div>
-              <div className="stat-sub">グローバル</div>
-            </div>
-          </div>
-        </div>
+            	<div className="stat-sub">グローバル</div>
+        	  </div>
+      	  </div>
+  	  </div>
 
-        {/* Version */}
-        <div className="version">
-          <span className="version-badge">↻ Version 1.0.0 - 革命的環境技術</span>
-        </div>
+  	  {/* Version */}
+  	  <div className="version">
+  	 	 <span className="version-badge">↻ Version 1.0.0 - 革命的環境技術</span>
+  	  </div>
 
-        {/* Actions */}
-        <div className="actions">
-          <button onClick={scrollToDetails} className="btn btn-primary">
-            <span className="btn-ico">▶</span> プロジェクト詳細を見る
-          </button>
-          <button
-            onClick={() => document.getElementById('token')?.scrollIntoView({ behavior: 'smooth' })}
-            className="btn btn-outline"
-          >
-            <span className="btn-ico">🪙</span> トークン情報
-          </button>
-          <button onClick={downloadWhitepaper} className="btn btn-outline">
-            <span className="btn-ico">⭳</span> ホワイトペーパー
-          </button>
-        </div>
+  	  {/* Actions */}
+  	  <div className="actions">
+  		  <button onClick={scrollToDetails} className="btn btn-primary">
+  			  <span className="btn-ico">▶</span> プロジェクト詳細を見る
+  		  </button>
+  		  <button
+  			  onClick={() => document.getElementById('token')?.scrollIntoView({ behavior: 'smooth' })}
+  			  className="btn btn-outline"
+  		  >
+  			  <span className="btn-ico">🪙</span> トークン情報
+  		  </button>
+  		  <button onClick={downloadWhitepaper} className="btn btn-outline">
+  			  <span className="btn-ico">⭳</span> ホワイトペーパー
+  		  </button>
+  	  </div>
 
-        {/* see more */}
-        <button className="see-more" onClick={scrollToDetails} aria-label="詳細を見る">
-          詳細を見る
-          <svg className="see-more-ico" viewBox="0 0 24 24" fill="none" stroke="#23d36f">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v14m0 0l-7-7m7 7l7-7" />
-          </svg>
-        </button>
-      </div>
+  	  {/* see more */}
+  	  <button className="see-more" onClick={scrollToDetails} aria-label="詳細を見る">
+  		  詳細を見る
+  		  <svg className="see-more-ico" viewBox="0 0 24 24" fill="none" stroke="#23d36f">
+  			  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v14m0 0l-7-7m7 7l7-7" />
+  		  </svg>
+  	  </button>
+    </div>
 
-      {/* Styles */}
-      <style jsx>{`
+    {/* Styles */}
+    <style jsx>{`
         /* ===== 固定ヘッダー ===== */
         .site-header{
           position: fixed; top: 0; left: 0; right: 0; height: 64px;
@@ -196,7 +197,7 @@ export default function Hero() {
           position: absolute; inset: -10%;
           background:
             radial-gradient(ellipse at 60% 40%, rgba(35, 211, 111, 0.14), transparent 55%),
-            radial-gradient(ellipse at 90% 80%, rgba(35, 211, 111, 0.18), transparent 45%);
+          	radial-gradient(ellipse at 90% 80%, rgba(35, 211, 111, 0.18), transparent 45%);
           mix-blend-mode: screen;
         }
 
@@ -232,7 +233,7 @@ export default function Hero() {
           padding: 28px 30px 22px;
           box-shadow:
             0 10px 24px rgba(0,0,0,0.42),
-            0 0 16px rgba(23, 211, 111, 0.1);
+          	0 0 16px rgba(23, 211, 111, 0.1);
           text-align: left;
         }
         .stat-number {
@@ -266,46 +267,46 @@ export default function Hero() {
           transition: transform .18s ease, box-shadow .22s ease, background .18s ease, border-color .18s ease;
           user-select: none;
         }
-        .btn-ico { font-size: 16px; line-height: 1; }
+      	.btn-ico { font-size: 16px; line-height: 1; }
 
-        /* 左：ソリッド緑（白に近いテキスト色） */
-        .btn-primary {
-          background: #16a34a;
-          border: 1px solid #16a34a;
-          color: #eafff2;
-          box-shadow: 0 16px 28px rgba(22,163,74,0.28), inset 0 0 0 1px rgba(255,255,255,0.04);
-        }
-        .btn-primary:hover {
-          transform: translateY(-1px);
-          background: #139246;
-          border-color: #139246;
-          box-shadow: 0 18px 34px rgba(22,163,74,0.34);
-        }
+      	/* 左：ソリッド緑（白に近いテキスト色） */
+      	.btn-primary {
+      	  background: #16a34a;
+      	  border: 1px solid #16a34a;
+      	  color: #eafff2;
+      	  box-shadow: 0 16px 28px rgba(22,163,74,0.28), inset 0 0 0 1px rgba(255,255,255,0.04);
+    	}
+    	.btn-primary:hover {
+    		  transform: translateY(-1px);
+    		  background: #139246;
+    		  border-color: #139246;
+    		  box-shadow: 0 18px 34px rgba(22,163,74,0.34);
+    	}
 
-        /* 右２つ：ダーク背景＋細い緑枠＋緑文字 */
-        .btn-outline {
-          background: #0b1410;
-          border: 1px solid #1b7c4d;
-          color: #66e5a0;
-          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
-        }
-        .btn-outline:hover {
-          transform: translateY(-1px);
-          border-color: #22c55e;
-          color: #8df2be;
-          box-shadow: 0 14px 26px rgba(34,197,94,0.22);
-        }
+    	/* 右２つ：ダーク背景＋細い緑枠＋緑文字 */
+    	.btn-outline {
+    		  background: #0b1410;
+    		  border: 1px solid #1b7c4d;
+    		  color: #66e5a0;
+    		  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+    	}
+    	.btn-outline:hover {
+    		  transform: translateY(-1px);
+    		  border-color: #22c55e;
+    		  color: #8df2be;
+    		  box-shadow: 0 14px 26px rgba(34,197,94,0.22);
+    	}
 
-        /* 「詳細を見る」 */
-        .see-more {
-          margin: 16px auto 8px;
-          display: inline-flex; align-items: center; gap: 8px;
-          background: transparent; border: none; font-size: 14px; cursor: pointer; padding: 8px 12px; opacity: .98;
-          color: #23d36f;
-        }
-        .see-more:hover { text-shadow: 0 0 10px rgba(35,211,111,0.34); }
-        .see-more-ico { width: 16px; height: 16px; }
-      `}</style>
-    </section>
-  )
+    	/* 「詳細を見る」 */
+    	.see-more {
+    		  margin: 16px auto 8px;
+    		  display: inline-flex; align-items: center; gap: 8px;
+    		  background: transparent; border: none; font-size: 14px; cursor: pointer; padding: 8px 12px; opacity: .98;
+    		  color: #23d36f;
+    	}
+    	.see-more:hover { text-shadow: 0 0 10px rgba(35,211,111,0.34); }
+    	.see-more-ico { width: 16px; height: 16px; }
+    `}</style>
+  </section>
+ )
 }
