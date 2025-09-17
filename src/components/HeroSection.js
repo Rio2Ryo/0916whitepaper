@@ -247,7 +247,7 @@ export default function Hero() {
 
         .see-more { margin: 16px auto 8px; display: inline-flex; align-items: center; gap: 8px; background: transparent; border: none; font-size: 14px; cursor: pointer; padding: 8px 12px; opacity: .98; }
         .see-more:hover { text-shadow: 0 0 10px rgba(36, 229, 112, 0.34); }
-        .see-more-ico { width: 16px; height: 16px; }
+        .see-more-ico { width: 16px; height: 16.1px; }
       `}</style>
     </section>
   )
