@@ -25,11 +25,11 @@ export default function Hero() {
         <div className="nav-inner">
           <Link href="/" className="brand">MOTHER<br />VEGETABLES</Link>
           <nav className="nav">
-            <a href="#project-overview">プロジェクト概要</a>
-            <a href="#team">チーム</a>
+          <a href="#team">メンバー</a>
+            <a href="#project-overview">プロジェクト詳細</a>
             <a href="#partners">パートナー</a>
-            <a href="#tech">技術詳細</a>
-            <a href="#token">トークン</a>
+            <a href="#tech">ショップ</a>
+            <a href="#token">ホワイトペーパー</a>
           </nav>
         </div>
       </header>
@@ -153,6 +153,9 @@ export default function Hero() {
         p{
         color:white;
         }
+        h1{
+        margin-top:70px!important;
+        }
 
         /* ====== ヘッダー（追加） ====== */
         .site-header{
@@ -209,7 +212,7 @@ export default function Hero() {
         }
 
         .title { margin: 0 0 20px 0; line-height: 1.08; letter-spacing: 0.02em; }
-        .title-accent {
+        .title-accent .thin {
           color: #05df72;
           font-weight: 400;
           font-size: 70px!important;
@@ -242,18 +245,18 @@ export default function Hero() {
           padding: 22px 24px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.36); text-align: left;
         }
         .stat-number {
-          color: var(--green); font-weight: 800; font-size: clamp(30px, 3.4vw, 46px);
+          color: #05df72; font-weight: 800; font-size: clamp(30px, 3.4vw, 46px);
           margin-bottom: 6px; text-shadow: 0 0 10px rgba(36, 229, 112, 0.28);
         }
         .stat-labels { color: var(--text); }
-        .stat-title { font-weight: 650; }
-        .stat-sub { color: var(--text-dim); font-size: 13px; margin-top: 2px; }
+        .stat-title { font-weight: 650;color:white; }
+        .stat-sub { color: white; font-size: 13px; margin-top: 2px; }
 
         .version { margin: 10px 0 16px; }
         .version-badge {
           display: inline-block; padding: 10px 16px; border-radius: 999px;
           background: rgba(6, 20, 12, 0.78); border: 1px solid var(--card-border);
-          color: var(--text); font-size: 14px;
+          color: #05df72; font-size: 14px;
         }
 
         .actions {
@@ -268,6 +271,7 @@ export default function Hero() {
           font-weight: 800; font-size: 15px; cursor: pointer;
           transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+          color:#05df72;
           user-select: none;
         }
         .btn-ico { font-size: 16px; line-height: 1; }
@@ -280,7 +284,7 @@ export default function Hero() {
 
         .see-more {
           margin: 16px auto 8px; display: inline-flex; align-items: center; gap: 8px;
-          background: transparent; border: none; color: var(--green);
+          background: transparent; border: none; color:#05df72;
           font-size: 14px; cursor: pointer; padding: 8px 12px; opacity: .98;
         }
         .see-more:hover { text-shadow: 0 0 10px rgba(36, 229, 112, 0.34); }
