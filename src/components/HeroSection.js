@@ -23,14 +23,14 @@ export default function Hero() {
       {/* ===== 固定ヘッダー ===== */}
       <header className="site-header">
         <div className="nav-inner">
-          <Link href="/" className="brand">
+          <Link href="/" className="brand" style={{ color: '#21d679' }}>
             MOTHER<br />VEGETABLES
           </Link>
           <nav className="nav">
-            <a href="#team">メンバー</a>
-            <a href="#project-overview">プロジェクト詳細</a>
-            <a href="#shop">ショップ</a>
-            <a href="#token">ホワイトペーパー</a>
+            <a href="#team" style={{ color: '#f4f9f6' }}>メンバー</a>
+            <a href="#project-overview" style={{ color: '#f4f9f6' }}>プロジェクト詳細</a>
+            <a href="#tech" style={{ color: '#f4f9f6' }}>ショップ</a>
+            <a href="#token" style={{ color: '#f4f9f6' }}>ホワイトペーパー</a>
           </nav>
         </div>
       </header>
@@ -45,131 +45,208 @@ export default function Hero() {
           priority
         />
         <div className="bg-overlay" />
+        <div className="bg-vignette" />
       </div>
 
       {/* Content */}
       <div className="content">
         {/* Title */}
         <h1 className="title">
-          MOTHER VEGETABLES<br />PROJECT
+          <span className="title-accent" style={{ color: '#05df72' }}>MOTHER VEGETABLES</span>
+          <br />
+          <span className="title-accent thin" style={{ color: '#05df72' }}>PROJECT</span>
         </h1>
 
         {/* Subtitle */}
         <div className="subtitle">
-          <p>地球最初の生命体による</p>
-          <p className="accent">地球再生プロジェクト</p>
+          <p className="lead-1" style={{ color: '#ffffff' }}>地球最初の生命体による</p>
+          <p className="lead-2" style={{ color: '#24e570' }}>地球再生プロジェクト</p>
 
-          {/* Intro card */}
+          {/* Intro glass card */}
           <div className="intro-box">
-            <p><span className="hl">35億年前</span>の地球最初の生命体「<span className="hl">マザーベジタブル</span>」を世界各地に展開することで、</p>
-            <p><span className="hl">CO₂を削減</span>しながら<span className="hl">人類と生物の健康を向上</span>させる、</p>
-            <p>作れば作るほど地球を良くしていく<span className="hl">循環型システム</span></p>
+            <p style={{ color: '#ffffff' }}>
+              <span className="hl" style={{ color: '#24e570' }}>35億年前</span>
+              の地球最初の生命体「<span className="hl" style={{ color: '#24e570' }}>マザーベジタブル</span>」を世界各地に展開することで、
+            </p>
+            <p style={{ color: '#ffffff' }}>
+              <span className="hl" style={{ color: '#24e570' }}>CO₂を削減</span>
+              しながら<span className="hl" style={{ color: '#24e570' }}>人類と生物の健康を向上</span>させる、
+            </p>
+            <p style={{ color: '#ffffff' }}>
+              作れば作るほど地球を良くしていく
+              <span className="hl strong" style={{ color: '#24e570' }}>循環型システム</span>
+            </p>
           </div>
         </div>
 
         {/* Stats */}
         <div className="stats">
           <div className="stat-card">
-            <div className="stat-number">700倍</div>
-            <div>CO₂吸収効率<br />vs 天然芝</div>
+            <div className="stat-number" style={{ color: '#05df72' }}>700倍</div>
+            <div className="stat-labels">
+              <div className="stat-title" style={{ color: '#ffffff' }}>CO₂吸収効率</div>
+              <div className="stat-sub" style={{ color: '#ffffff' }}>vs 天然芝</div>
+            </div>
           </div>
+
           <div className="stat-card">
-            <div className="stat-number">24/7</div>
-            <div>連続稼働<br />365日間</div>
+            <div className="stat-number" style={{ color: '#05df72' }}>24/7</div>
+            <div className="stat-labels">
+              <div className="stat-title" style={{ color: '#ffffff' }}>連続稼働</div>
+              <div className="stat-sub" style={{ color: '#ffffff' }}>365日間</div>
+            </div>
           </div>
+
           <div className="stat-card">
-            <div className="stat-number">8分野</div>
-            <div>産業展開<br />グローバル</div>
+            <div className="stat-number" style={{ color: '#05df72' }}>8分野</div>
+            <div className="stat-labels">
+              <div className="stat-title" style={{ color: '#ffffff' }}>産業展開</div>
+              <div className="stat-sub" style={{ color: '#ffffff' }}>グローバル</div>
+            </div>
           </div>
         </div>
 
         {/* Version */}
         <div className="version">
-          ↻ Version 1.0.0 - 革命的環境技術
+          <span className="version-badge" style={{ color: '#05df72' }}>
+            ↻ Version 1.0.0 - 革命的環境技術
+          </span>
         </div>
 
         {/* Actions */}
         <div className="actions">
-          <button onClick={scrollToDetails} className="btn primary">▶ プロジェクト詳細を見る</button>
-          <button onClick={() => document.getElementById('token')?.scrollIntoView({ behavior: 'smooth' })} className="btn outline">🪙 トークン情報</button>
-          <button onClick={downloadWhitepaper} className="btn outline">⭳ ホワイトペーパー</button>
+          <button onClick={scrollToDetails} className="btn btn-primary" style={{ color: '#062412' }}>
+            <span className="btn-ico">▶</span> プロジェクト詳細を見る
+          </button>
+          <button
+            onClick={() => document.getElementById('token')?.scrollIntoView({ behavior: 'smooth' })}
+            className="btn btn-outline"
+            style={{ color: '#24e570' }}
+          >
+            <span className="btn-ico">🪙</span> トークン情報
+          </button>
+          <button onClick={downloadWhitepaper} className="btn btn-outline" style={{ color: '#24e570' }}>
+            <span className="btn-ico">⭳</span> ホワイトペーパー
+          </button>
         </div>
 
-        <button className="see-more" onClick={scrollToDetails}>
-          詳細を見る ↓
+        {/* see more */}
+        <button className="see-more" onClick={scrollToDetails} aria-label="詳細を見る" style={{ color: '#24e570' }}>
+          詳細を見る
+          <svg className="see-more-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5v14m0 0l-7-7m7 7l7-7" />
+          </svg>
         </button>
       </div>
 
       {/* Styles */}
       <style jsx>{`
         :root {
-          --green: #21d679;
-          --green-dark: #1ab163;
-          --text: #fff;
-          --dim: #ccc;
-          --card-bg: rgba(0,0,0,0.65);
-          --border: rgba(33,214,121,0.3);
+          --green: #24e570;
+          --green-strong: #1fc764;
+          --green-soft: #90f7c0;
+          --bg-deep: #000000;
+          --text: #f5fff8;
+          --text-dim: #cfe7d6;
+          --card-border: rgba(36, 229, 112, 0.35);
+          --card-bg: rgba(4, 18, 10, 0.6);
+          --glass-bg: rgba(6, 18, 12, 0.68);
+          --overlay: rgba(0, 0, 0, 0.95);
         }
 
-        .site-header {
+        /* ここでの色指定は残しますが、上で全要素に inline color を与えているため確実に反映されます */
+
+        .site-header{
           position: fixed; top: 0; left: 0; right: 0;
-          height: 60px;
-          background: rgba(0,0,0,0.9);
-          display: flex; align-items: center;
+          height: 64px;
+          background: rgba(0,0,0,0.92);
+          border-bottom: 1px solid rgba(34,197,94,0.18);
+          backdrop-filter: saturate(140%) blur(6px);
           z-index: 1000;
-          border-bottom: 1px solid var(--border);
         }
-        .nav-inner { max-width: 1200px; margin: auto; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .brand { color: var(--green); font-weight: bold; text-decoration: none; }
-        .nav a { color: var(--text); margin-left: 20px; text-decoration: none; font-size: 14px; }
+        .nav-inner{
+          max-width: 1200px; margin: 0 auto; height: 100%;
+          display: flex; align-items: center; justify-content: space-between;
+          padding: 0 18px;
+        }
+        .nav{ display: flex; gap: 22px; }
+        .nav a{ text-decoration: none; font-size: 14px; opacity: .92; }
+        .nav a:hover{ opacity: 1; text-shadow: 0 0 6px rgba(33,214,121,.35); }
+
+        .hero {
+          position: relative;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          background: var(--bg-deep);
+          padding-top: 6.2rem;
+        }
 
         .bg-wrap { position: absolute; inset: 0; z-index: -1; }
-        .bg-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.85); }
+        .bg-overlay { position: absolute; inset: 0; background: var(--overlay); }
+        .bg-vignette {
+          position: absolute; inset: -10%;
+          background:
+            radial-gradient(ellipse at 60% 40%, rgba(36, 229, 112, 0.12), transparent 55%),
+            radial-gradient(ellipse at 90% 80%, rgba(36, 229, 112, 0.18), transparent 45%);
+          mix-blend-mode: screen;
+        }
 
-        .content { text-align: center; color: var(--text); padding: 120px 20px 60px; }
+        .content { position: relative; text-align: center; padding: 0 20px; max-width: 1200px; margin: 0 auto; }
 
-        .title { font-size: 48px; font-weight: 800; margin-bottom: 20px; color: var(--green); }
-        .subtitle p { margin: 4px 0; }
-        .accent { color: var(--green); font-weight: 600; }
+        .title { margin: 0 0 20px 0; line-height: 1.08; letter-spacing: 0.02em; }
+        .title .thin { font-weight: 760; }
+
+        .subtitle { margin-top: 6px; }
 
         .intro-box {
-          margin: 20px auto; padding: 20px;
-          max-width: 800px;
-          background: var(--card-bg);
-          border: 1px solid var(--border);
-          border-radius: 12px;
-          font-size: 16px;
-          line-height: 1.8;
+          margin: 0 auto 18px; max-width: 920px; background: var(--glass-bg);
+          border: 1px solid var(--card-border); border-radius: 18px; padding: 18px 22px;
+          box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38); backdrop-filter: blur(6px);
+          line-height: 1.9; font-size: clamp(14px, 1.6vw, 18px);
         }
-        .hl { color: var(--green); font-weight: 600; }
+        .intro-box p { margin: 6px 0; }
 
-        .stats { display: flex; justify-content: center; gap: 20px; margin: 30px auto; flex-wrap: wrap; }
+        .stats { margin: 16px auto 22px; display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 980px; }
+        @media (min-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 900px) { .stats { grid-template-columns: repeat(3, 1fr); } }
+
         .stat-card {
-          flex: 1 1 200px;
-          background: var(--card-bg);
-          border: 1px solid var(--border);
-          border-radius: 10px;
-          padding: 20px;
+          background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px;
+          padding: 22px 24px; box-shadow: 0 10px 24px rgba(0, 0, 0, 0.36); text-align: left;
+        }
+
+        .version { margin: 10px 0 16px; }
+        .version-badge {
+          display: inline-block; padding: 10px 16px; border-radius: 999px;
+          background: rgba(6, 20, 12, 0.78); border: 1px solid var(--card-border);
           font-size: 14px;
         }
-        .stat-number { color: var(--green); font-weight: bold; font-size: 24px; margin-bottom: 6px; }
 
-        .version { margin: 20px 0; font-size: 14px; color: var(--green); }
+        .actions { display: flex; flex-direction: column; gap: 12px; justify-content: center; align-items: center; margin-top: 8px; }
+        @media (min-width: 700px) { .actions { flex-direction: row; } }
 
-        .actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 20px; }
         .btn {
-          padding: 10px 18px;
-          border-radius: 8px;
-          font-weight: bold;
-          cursor: pointer;
-          border: none;
+          display: inline-flex; align-items: center; gap: 10px;
+          padding: 12px 22px; border-radius: 12px;
+          font-weight: 800; font-size: 15px; cursor: pointer;
+          transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+          user-select: none;
         }
-        .btn.primary { background: var(--green); color: #000; }
-        .btn.primary:hover { background: var(--green-dark); }
-        .btn.outline { background: transparent; border: 1px solid var(--green); color: var(--green); }
-        .btn.outline:hover { background: rgba(33,214,121,0.1); }
+        .btn-ico { font-size: 16px; line-height: 1; }
 
-        .see-more { margin-top: 20px; color: var(--green); background: none; border: none; cursor: pointer; font-size: 14px; }
+        .btn-primary { background: var(--green); border: 1px solid var(--green); }
+        .btn-primary:hover { transform: translateY(-1px); background: var(--green-strong); border-color: var(--green-strong); box-shadow: 0 14px 28px rgba(36, 229, 112, 0.26); }
+
+        .btn-outline { background: #0a1210; border: 1px solid var(--card-border); }
+        .btn-outline:hover { transform: translateY(-1px); border-color: var(--green); box-shadow: 0 14px 28px rgba(36, 229, 112, 0.22); }
+
+        .see-more { margin: 16px auto 8px; display: inline-flex; align-items: center; gap: 8px; background: transparent; border: none; font-size: 14px; cursor: pointer; padding: 8px 12px; opacity: .98; }
+        .see-more:hover { text-shadow: 0 0 10px rgba(36, 229, 112, 0.34); }
+        .see-more-ico { width: 16px; height: 16.1px; }
       `}</style>
     </section>
   )
